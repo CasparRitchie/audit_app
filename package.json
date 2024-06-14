@@ -6,8 +6,7 @@
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-scripts": "4.0.3",
-    "serve": "^14.2.3",
-    "survey-react": "^1.11.2"
+    "serve": "^11.3.2"
   },
   "scripts": {
     "start": "serve -s build",
@@ -32,5 +31,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "engines": {
+    "node": ">=14.0.0"
   }
 }
