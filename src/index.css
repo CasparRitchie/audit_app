@@ -1,0 +1,45 @@
+body{
+  --main-color: #D30E7F !important;
+  font-family: 'Roboto Medium', Arial, sans-serif;
+  --add-button-color: #9AC94E
+}
+
+/* font for dropdowns etc */
+#root{
+  font-family: 'Roboto Medium', Arial, sans-serif !important;
+
+}
+/* font for Experience convive header */
+div{
+  font-family: 'Roboto Medium', Arial, sans-serif !important;
+
+}
+h4{
+  background-color: #D30E7F;
+  color: white
+}
+
+.sv-paneldynamic__add-btn{
+  background-color: #9AC94E
+}
+.sv-paneldynamic__remove-btn{
+  background-color: #D30E7F;
+}
+
+.sv-rating__item-smiley--selected > svg{
+  background-color: #9AC94E;
+}
+
+.sv-body__timer, .sv-body__page{
+/* background-color: aqua; */
+}
+
+
+
+@font-face {
+  font-family: 'Roboto Medium'!important;
+  src: url('../public/fonts/Roboto-Medium.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  color:red;
+}
