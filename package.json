@@ -1,17 +1,18 @@
 {
-  "name": "86-react-survey",
+  "name": "react-heroku-app",
   "version": "1.0.0",
+  "private": true,
+  "dependencies": {
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-scripts": "4.0.3",
+    "serve": "^11.3.2"
+  },
   "scripts": {
+    "start": "serve -s build",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "start": "serve -s build"
-  },
-  "dependencies": {
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "react-scripts": "^5.0.1",
-    "survey-react": "^1.11.2"
+    "eject": "react-scripts eject"
   },
   "eslintConfig": {
     "extends": [
