@@ -37,8 +37,8 @@ class SurveyComponent extends Component {
       "showProgressBar": "topbottom",
       "progressBarType": "questions",
       "showTOC": true,
-      "pageNextText": "\"Next Page\" button text",
-      "completeText": "Complete Survey button text",
+      "pageNextText": "Suivant",
+      "completeText": "Finaliser audit",
       "showPreviewBeforeComplete": "showAnsweredQuestions",
       "widthMode": "responsive"
     };
