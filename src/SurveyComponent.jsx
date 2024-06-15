@@ -21,7 +21,6 @@ class SurveyComponent extends Component {
 
     this.surveyJson = {
       title: "Expérience convive",
-      showProgressBar: "top",
       pages: [
         page_accueil,
         les_affichages,
@@ -30,7 +29,16 @@ class SurveyComponent extends Component {
         le_personnel,
         zone_distribution_reduit,
         les_prestations_chaudes,
-      ]
+      ],
+      "sendResultOnPageNext": true,
+      "showPageNumbers": true,
+      "showProgressBar": "topbottom",
+      "progressBarType": "questions",
+      "showTOC": true,
+      "pageNextText": "\"Next Page\" button text",
+      "completeText": "Complete Survey button text",
+      "showPreviewBeforeComplete": "showAnsweredQuestions",
+      "widthMode": "responsive"
     };
 
     this.survey = new Model(this.surveyJson);
