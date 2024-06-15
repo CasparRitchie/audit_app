@@ -43,3 +43,14 @@ h4{
   font-style: normal;
   color:red;
 }
+/* Custom CSS for positioning add and remove buttons */
+.sv_q_paneldynamic__add-btn,
+.sv_q_paneldynamic__remove-btn {
+  float: right;
+  margin-left: 10px;
+}
+
+.sv_q_paneldynamic__footer {
+  display: flex;
+  justify-content: flex-end;
+}
