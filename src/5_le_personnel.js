@@ -1,4 +1,4 @@
-import overall_personnel from './overall_personnel';
+import createOverallPersonnel from './overall_personnel';
 
 const le_personnel = {
     "name": "le_personnel",
@@ -7,7 +7,7 @@ const le_personnel = {
       {
         "type": "panel",
         "name": "overall_personnel",
-        "elements": overall_personnel.elements
+        "elements": createOverallPersonnel('le_personnel').elements
       },
     ]
   };

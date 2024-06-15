@@ -1,8 +1,8 @@
-import les_verres from './les_verres';
-import stand_les_locaux from './stand_les_locaux';
-import maitrise_des_flux from './maitrise_des_flux';
-import respect_des_horaires_de_service from './respect_des_horaires_de_service';
-import environnement_decoration from './environnement_decoration';
+import createLesVerres from './les_verres';
+import createStandLesLocaux from './stand_les_locaux';
+import createMaitriseDesFlux from './maitrise_des_flux';
+import createRespectDesHorairesDeService from './respect_des_horaires_de_service';
+import createEnvironnementDecoration from './environnement_decoration';
 
     const zone_distribution_reduit = {
       "name": "zone_de_distribution",
@@ -11,27 +11,27 @@ import environnement_decoration from './environnement_decoration';
         {
           "type": "panel",
           "name": "zone_distribution_reduit_les_verres",
-          "elements": les_verres.elements
+          "elements": createLesVerres('zone_distribution_reduit').elements
         },
         {
           "type": "panel",
           "name": "zone_distribution_reduit_stand_locaux",
-          "elements": stand_les_locaux.elements
+          "elements": createStandLesLocaux('zone_distribution_reduit').elements
         },
         {
         "type": "panel",
         "name": "zone_distribution_reduit_maitrise_des_flux",
-        "elements": maitrise_des_flux.elements
-        },
+        "elements": createMaitriseDesFlux('zone_distribution_reduit').elements
+      },
         {
           "type": "panel",
           "name": "zone_distribution_reduit_respect_des_horaires_de_service",
-          "elements": respect_des_horaires_de_service.elements
+          "elements": createRespectDesHorairesDeService('zone_distribution_reduit').elements
         },
         {
           "type": "panel",
           "name": "zone_distribution_reduit_environnement_decoration",
-          "elements": environnement_decoration.elements
+          "elements": createEnvironnementDecoration('zone_distribution_reduit').elements
         },
       ]
     };

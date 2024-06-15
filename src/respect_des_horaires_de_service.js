@@ -4,26 +4,28 @@ const rateValues = [
   {"value": 3, "text": "Green"}
 ];
 
-const respect_des_horaires_de_service = {
-  "name": "respect_des_horaires_de_service",
-  "title": "Respect des horaires de service",
-  "elements": [
-    {
-      "type": "panel",
-      "name": "respect_des_horaires_de_service_panel",
-      "title": "Respect des horaires de service",
-      "elements": [
-        {
-          "type": "rating",
-          "name": "respect_horaires_service",
-          "title": "Respect des horaires de service",
-          "rateType": "smileys",
-          "scaleColorMode": "colored",
-          "rateValues": rateValues
-        }
-      ]
-    }
-  ]
-};
+function createRespectDesHorairesDeService(prefix) {
+  return {
+    "name": `${prefix}_respect_des_horaires_de_service`,
+    "title": "Respect des horaires de service",
+    "elements": [
+      {
+        "type": "panel",
+        "name": `${prefix}_respect_des_horaires_de_service_panel`,
+        "title": "Respect des horaires de service",
+        "elements": [
+          {
+            "type": "rating",
+            "name": `${prefix}_respect_horaires_service`,
+            "title": "Respect des horaires de service",
+            "rateType": "smileys",
+            "scaleColorMode": "colored",
+            "rateValues": rateValues
+          }
+        ]
+      }
+    ]
+  };
+}
 
-export default respect_des_horaires_de_service;
+export default createRespectDesHorairesDeService;

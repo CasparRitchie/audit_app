@@ -10,7 +10,7 @@ import zone_distribution from "./4_zone_distribution";
 import le_personnel from "./5_le_personnel";
 import zone_distribution_reduit from "./6_zone_distribution_reduit";
 import les_prestations_chaudes from "./7_les_prestations_chaudes"
-
+import les_hors_d_oeuvre from "./8_les_hors_d_oeuvre";
 import "./index.css";
 
 StylesManager.applyTheme("modern");
@@ -29,6 +29,8 @@ class SurveyComponent extends Component {
         le_personnel,
         zone_distribution_reduit,
         les_prestations_chaudes,
+        les_hors_d_oeuvre,
+
       ],
       "sendResultOnPageNext": true,
       "showPageNumbers": true,

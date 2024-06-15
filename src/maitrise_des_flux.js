@@ -4,26 +4,28 @@ const rateValues = [
   {"value": 3, "text": "Green"}
 ];
 
-const maitrise_des_flux = {
-  "name": "maitrise_des_flux",
-  "title": "Maîtrise des flux",
-  "elements": [
-    {
-      "type": "panel",
-      "name": "maitrise_des_flux_panel",
-      "title": "Maîtrise des flux",
-      "elements": [
-        {
-          "type": "rating",
-          "name": "reactivite_reduire_temps_attente",
-          "title": "Réactivité pour réduire les temps d'attente",
-          "rateType": "smileys",
-          "scaleColorMode": "colored",
-          "rateValues": rateValues
-        }
-      ]
-    }
-  ]
-};
+function createMaitriseDesFlux(prefix) {
+  return {
+    "name": `${prefix}_maitrise_des_flux`,
+    "title": "Maîtrise des flux",
+    "elements": [
+      {
+        "type": "panel",
+        "name": `${prefix}_maitrise_des_flux_panel`,
+        "title": "Maîtrise des flux",
+        "elements": [
+          {
+            "type": "rating",
+            "name": `${prefix}_reactivite_reduire_temps_attente`,
+            "title": "Réactivité pour réduire les temps d'attente",
+            "rateType": "smileys",
+            "scaleColorMode": "colored",
+            "rateValues": rateValues
+          }
+        ]
+      }
+    ]
+  };
+}
 
-export default maitrise_des_flux;
+export default createMaitriseDesFlux;

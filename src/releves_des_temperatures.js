@@ -1,40 +1,31 @@
-const releves_des_temperatures = {
-  "name": "releves_des_temperatures",
-  "title": "Relevés des températures",
-  "elements": [
-    {
-      "type": "panel",
-      "name": "viandes_bovines_releves",
-      "title": "Nous allons ajouter un table ici avec 3 entrees et la possiblité d'en rajouter",
-      "elements": [
-        {
-          "type": "radiogroup",
-          "name": "viandes_bovines_affichage_releve",
-          "title": "Nous allons ajouter un table ici avec 3 entrees et la possiblité d'en rajouter",
-          "choices": [
-            { "value": "ok", "text": "OK" },
-            { "value": "nok", "text": "NOK" }
-          ]
-        }
-      ]
-    },
-    {
-      "type": "panel",
-      "name": "autres_viandes_releves",
-      "title": "Nous allons ajouter un table ici avec 3 entrees et la possiblité d'en rajouter",
-      "elements": [
-        {
-          "type": "radiogroup",
-          "name": "autres_viandes_affichage",
-          "title": "Nous allons ajouter un table ici avec 3 entrees et la possiblité d'en rajouter",
-          "choices": [
-            { "value": "ok", "text": "OK" },
-            { "value": "nok", "text": "NOK" }
-          ]
-        }
-      ]
-    },
-  ]
-};
+function createTemperatureRecording(prefix) {
+  return {
+    "name": `${prefix}_releves_des_temperatures`,
+    "title": "Relevés des températures",
+    "elements": [
+      {
+        "type": "paneldynamic",
+        "name": `${prefix}_temperature_recordings`,
+        "title": "Relevés des températures des plats",
+        "templateElements": [
+          {
+            "type": "text",
+            "name": `${prefix}_nom_du_plat`,
+            "title": "Nom du plat"
+          },
+          {
+            "type": "text",
+            "name": `${prefix}_temperature`,
+            "title": "Température",
+            "inputType": "number"
+          }
+        ],
+        "panelAddText": "Ajouter un relevé de température",
+        "panelRemoveText": "Supprimer ce relevé de température",
+        "minPanelCount": 1
+      }
+    ]
+  };
+}
 
-export default releves_des_temperatures;
+export default createTemperatureRecording;

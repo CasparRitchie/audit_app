@@ -1,4 +1,4 @@
-import les_locaux from './les_locaux';
+import createLesLocaux from './les_locaux';
 
 const zone_d_acces_au_self = {
   "name": "zone_d_acces_au_self",
@@ -7,7 +7,7 @@ const zone_d_acces_au_self = {
     {
       "type": "panel",
       "name": "les_locaux_zone_d_access",
-      "elements": les_locaux.elements
+      "elements": createLesLocaux('les_locaux_zone_d_access').elements
     },
     // Add other questions or blocks related to Zone d'accès au self here
   ]
