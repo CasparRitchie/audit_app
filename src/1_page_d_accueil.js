@@ -113,7 +113,7 @@ const page_accueil = {
           "inputType": "date"
         }
       ],
-      "panelCount": 1,
+      "panelCount": 0,
     }
   ]
 };

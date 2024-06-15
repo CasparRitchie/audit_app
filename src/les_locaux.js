@@ -1,8 +1,13 @@
+import red from './images/red.png'
+import amber from './images/amber.png'
+import green from './images/green.png'
+
 const rateValues = [
-  { "value": 1, "text": "Red" },
-  { "value": 2, "text": "Orange" },
-  { "value": 3, "text": "Green" }
+  { "value": 1, "text": "Red", "imageLink": red },
+  { "value": 2, "text": "Orange", "imageLink": amber },
+  { "value": 3, "text": "Green", "imageLink": green }
 ];
+const image_size = 50
 
 function createLesLocaux(prefix) {
   return {
@@ -15,68 +20,92 @@ function createLesLocaux(prefix) {
         "title": "Les Locaux",
         "elements": [
           {
-            "type": "rating",
+            "type": "imagepicker",
             "name": `${prefix}_etat_des_vitres`,
             "title": "Etat des vitres",
-            "rateType": "smileys",
-            "scaleColorMode": "colored",
-            "rateValues": rateValues
+                      "imageWidth": image_size,
+          "imageHeight": image_size,
+          "choices": rateValues.map(rate => ({
+            "value": rate.value,
+            "imageLink": rate.imageLink
+          }))
           },
           {
-            "type": "rating",
+            "type": "imagepicker",
             "name": `${prefix}_proprete_des_vitres`,
             "title": "Propreté des vitres",
-            "rateType": "smileys",
-            "scaleColorMode": "colored",
-            "rateValues": rateValues
+                      "imageWidth": image_size,
+          "imageHeight": image_size,
+          "choices": rateValues.map(rate => ({
+            "value": rate.value,
+            "imageLink": rate.imageLink
+          }))
           },
           {
-            "type": "rating",
+            "type": "imagepicker",
             "name": `${prefix}_etat_des_murs`,
             "title": "Etat des murs",
-            "rateType": "smileys",
-            "scaleColorMode": "colored",
-            "rateValues": rateValues
+                      "imageWidth": image_size,
+          "imageHeight": image_size,
+          "choices": rateValues.map(rate => ({
+            "value": rate.value,
+            "imageLink": rate.imageLink
+          }))
           },
           {
-            "type": "rating",
+            "type": "imagepicker",
             "name": `${prefix}_proprete_des_murs`,
             "title": "Propreté des murs",
-            "rateType": "smileys",
-            "scaleColorMode": "colored",
-            "rateValues": rateValues
+                      "imageWidth": image_size,
+          "imageHeight": image_size,
+          "choices": rateValues.map(rate => ({
+            "value": rate.value,
+            "imageLink": rate.imageLink
+          }))
           },
           {
-            "type": "rating",
+            "type": "imagepicker",
             "name": `${prefix}_etat_des_sols`,
             "title": "Etat des sols",
-            "rateType": "smileys",
-            "scaleColorMode": "colored",
-            "rateValues": rateValues
+                      "imageWidth": image_size,
+          "imageHeight": image_size,
+          "choices": rateValues.map(rate => ({
+            "value": rate.value,
+            "imageLink": rate.imageLink
+          }))
           },
           {
-            "type": "rating",
+            "type": "imagepicker",
             "name": `${prefix}_proprete_des_sols`,
             "title": "Propreté des sols",
-            "rateType": "smileys",
-            "scaleColorMode": "colored",
-            "rateValues": rateValues
+                      "imageWidth": image_size,
+          "imageHeight": image_size,
+          "choices": rateValues.map(rate => ({
+            "value": rate.value,
+            "imageLink": rate.imageLink
+          }))
           },
           {
-            "type": "rating",
+            "type": "imagepicker",
             "name": `${prefix}_etat_des_plafonds`,
             "title": "Etat des plafonds",
-            "rateType": "smileys",
-            "scaleColorMode": "colored",
-            "rateValues": rateValues
+                      "imageWidth": image_size,
+          "imageHeight": image_size,
+          "choices": rateValues.map(rate => ({
+            "value": rate.value,
+            "imageLink": rate.imageLink
+          }))
           },
           {
-            "type": "rating",
+            "type": "imagepicker",
             "name": `${prefix}_proprete_des_plafonds`,
             "title": "Propreté des plafonds",
-            "rateType": "smileys",
-            "scaleColorMode": "colored",
-            "rateValues": rateValues
+                      "imageWidth": image_size,
+          "imageHeight": image_size,
+          "choices": rateValues.map(rate => ({
+            "value": rate.value,
+            "imageLink": rate.imageLink
+          }))
           }
         ]
       }
