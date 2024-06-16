@@ -1,8 +1,13 @@
+import red from './images/red.png'
+import amber from './images/amber.png'
+import green from './images/green.png'
+
 const rateValues = [
-  { "value": 1, "text": "Red" },
-  { "value": 2, "text": "Orange" },
-  { "value": 3, "text": "Green" }
+  { "value": 1, "text": "Red", "imageLink": red },
+  { "value": 2, "text": "Orange", "imageLink": amber },
+  { "value": 3, "text": "Green", "imageLink": green }
 ];
+const image_size = 50
 
 function createLesAffichagesObligatoires(prefix) {
   return {
@@ -42,49 +47,64 @@ function createLesAffichagesObligatoires(prefix) {
         ]
       },
       {
-        "type": "panel",
+        "type": "paneldynamic",
         "name": `${prefix}_affichage`,
         "title": "Affichage",
-        "elements": [
+        "templateElements": [
           {
-            "type": "rating",
+            "type": "imagepicker",
             "name": `${prefix}_presence_d_un_affichage`,
             "title": "Présence d'un affichage",
-            "rateType": "smileys",
-            "scaleColorMode": "colored",
-            "rateValues": rateValues
+            "imageWidth": image_size,
+            "imageHeight": image_size,
+            "choices": rateValues.map(rate => ({
+              "value": rate.value,
+              "imageLink": rate.imageLink
+            }))
           },
           {
-            "type": "rating",
+            "type": "imagepicker",
             "name": `${prefix}_qualite_de_l_affichage`,
             "title": "Qualité de l'affichage",
-            "rateType": "smileys",
-            "scaleColorMode": "colored",
-            "rateValues": rateValues
+            "imageWidth": image_size,
+            "imageHeight": image_size,
+            "choices": rateValues.map(rate => ({
+              "value": rate.value,
+              "imageLink": rate.imageLink
+            }))
           },
           {
-            "type": "rating",
+            "type": "imagepicker",
             "name": `${prefix}_lisibilite_des_informations`,
             "title": "Lisibilité des informations",
-            "rateType": "smileys",
-            "scaleColorMode": "colored",
-            "rateValues": rateValues
+            "imageWidth": image_size,
+            "imageHeight": image_size,
+            "choices": rateValues.map(rate => ({
+              "value": rate.value,
+              "imageLink": rate.imageLink
+            }))
           },
           {
-            "type": "rating",
+            "type": "imagepicker",
             "name": `${prefix}_precision_des_informations`,
             "title": "Précision des informations",
-            "rateType": "smileys",
-            "scaleColorMode": "colored",
-            "rateValues": rateValues
+            "imageWidth": image_size,
+            "imageHeight": image_size,
+            "choices": rateValues.map(rate => ({
+              "value": rate.value,
+              "imageLink": rate.imageLink
+            }))
           },
           {
-            "type": "rating",
+            "type": "imagepicker",
             "name": `${prefix}_indication_du_prix`,
             "title": "Indication du prix",
-            "rateType": "smileys",
-            "scaleColorMode": "colored",
-            "rateValues": rateValues
+            "imageWidth": image_size,
+            "imageHeight": image_size,
+            "choices": rateValues.map(rate => ({
+              "value": rate.value,
+              "imageLink": rate.imageLink
+            }))
           }
         ]
       },
@@ -94,12 +114,15 @@ function createLesAffichagesObligatoires(prefix) {
         "title": "Présentation",
         "elements": [
           {
-            "type": "rating",
+            "type": "imagepicker",
             "name": `${prefix}_qualite_de_la_presentation`,
             "title": "Qualité de la présentation",
-            "rateType": "smileys",
-            "scaleColorMode": "colored",
-            "rateValues": rateValues
+            "imageWidth": image_size,
+            "imageHeight": image_size,
+            "choices": rateValues.map(rate => ({
+              "value": rate.value,
+              "imageLink": rate.imageLink
+            }))
           },
           {
             "type": "radiogroup",
@@ -118,44 +141,59 @@ function createLesAffichagesObligatoires(prefix) {
         "title": "Les ustensiles de service",
         "elements": [
           {
-            "type": "rating",
+            "type": "imagepicker",
             "name": `${prefix}_etat_des_ustensiles`,
             "title": "Etat des ustensiles",
-            "rateType": "smileys",
-            "scaleColorMode": "colored",
-            "rateValues": rateValues
+            "imageWidth": image_size,
+            "imageHeight": image_size,
+            "choices": rateValues.map(rate => ({
+              "value": rate.value,
+              "imageLink": rate.imageLink
+            }))
           },
           {
-            "type": "rating",
+            "type": "imagepicker",
             "name": `${prefix}_proprete_des_ustensiles`,
             "title": "Propreté des ustensiles",
-            "rateType": "smileys",
-            "scaleColorMode": "colored",
-            "rateValues": rateValues
+            "imageWidth": image_size,
+            "imageHeight": image_size,
+            "choices": rateValues.map(rate => ({
+              "value": rate.value,
+              "imageLink": rate.imageLink
+            }))
           },
           {
-            "type": "rating",
+            "type": "imagepicker",
             "name": `${prefix}_etat_des_bacs_gastronormes`,
             "title": "Etat des bacs gastronormes",
-            "rateType": "smileys",
-            "scaleColorMode": "colored",
-            "rateValues": rateValues
+            "imageWidth": image_size,
+            "imageHeight": image_size,
+            "choices": rateValues.map(rate => ({
+              "value": rate.value,
+              "imageLink": rate.imageLink
+            }))
           },
           {
-            "type": "rating",
+            "type": "imagepicker",
             "name": `${prefix}_proprete_des_bacs_gastronormes`,
             "title": "Propreté des bacs gastronormes",
-            "rateType": "smileys",
-            "scaleColorMode": "colored",
-            "rateValues": rateValues
+            "imageWidth": image_size,
+            "imageHeight": image_size,
+            "choices": rateValues.map(rate => ({
+              "value": rate.value,
+              "imageLink": rate.imageLink
+            }))
           },
           {
-            "type": "rating",
+            "type": "imagepicker",
             "name": `${prefix}_adequation_des_ustensiles_de_service_a_la_prestation_servie`,
             "title": "Adéquation des ustensiles de service à la prestation servie",
-            "rateType": "smileys",
-            "scaleColorMode": "colored",
-            "rateValues": rateValues
+            "imageWidth": image_size,
+            "imageHeight": image_size,
+            "choices": rateValues.map(rate => ({
+              "value": rate.value,
+              "imageLink": rate.imageLink
+            }))
           }
         ]
       }

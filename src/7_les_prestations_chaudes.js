@@ -13,49 +13,58 @@ import createStandPersonnel from "./stand_personnel";
       "title": "Les prestations chaudes",
       "elements": [
         {
-          "type": "panel",
+          "type": "paneldynamic",
           "name": "les_prestations_chaudes_affichages_obligatoires",
-          "elements": createLesAffichagesObligatoires('les_prestations_chaudes').elements
+          "title": "Affichages obligatoires",
+          "templateElements": createLesAffichagesObligatoires('les_prestations_chaudes').elements
         },
         {
-          "type": "panel",
+          "type": "paneldynamic",
           "name": "les_prestations_chaudes_affichage",
-          "elements": createAffichage('les_prestations_chaudes').elements
+          "title": "Affichages",
+          "templateElements": createAffichage('les_prestations_chaudes').elements
         },
         {
-        "type": "panel",
+        "type": "paneldynamic",
         "name": "les_prestations_chaudes_presentation",
-        "elements": createPresentation('les_prestations_chaudes').elements
+        "title": "Présentation",
+        "templateElements": createPresentation('les_prestations_chaudes').elements
         },
         {
-          "type": "panel",
+          "type": "paneldynamic",
           "name": "les_prestations_chaudes_ustensiles_de_service",
-          "elements": createLesUstensilesDeService('les_prestations_chaudes').elements
+          "title": "Ustensiles de service",
+          "templateElements": createLesUstensilesDeService('les_prestations_chaudes').elements
         },
         {
-          "type": "panel",
+          "type": "paneldynamic",
           "name": "les_prestations_chaudes_releves_des_temperatures",
-          "elements": createTemperatureRecording('les_prestations_chaudes').elements
+          "title": "Relevés de temperatures",
+          "templateElements": createTemperatureRecording('les_prestations_chaudes').elements
         },
         {
-          "type": "panel",
+          "type": "paneldynamic",
           "name": "les_prestations_chaudes_le_materiel_general",
-          "elements": createLeMateriel('les_prestations_chaudes').elements
+          "title": "Le materiel",
+          "templateElements": createLeMateriel('les_prestations_chaudes').elements
         },
         {
-          "type": "panel",
+          "type": "paneldynamic",
           "name": "les_prestations_chaudes_le_materiel_specifique",
-          "elements": createLeMaterielPrestationsChaudes('les_prestations_chaudes').elements
+          "title": "Le materiel pour le chaud",
+          "templateElements": createLeMaterielPrestationsChaudes('les_prestations_chaudes').elements
         },
         {
-          "type": "panel",
+          "type": "paneldynamic",
           "name": "les_prestations_chaudes_le_personnel_le_service",
-          "elements": createLeService('les_prestations_chaudes').elements
+          "title": "Le service",
+          "templateElements": createLeService('les_prestations_chaudes').elements
         },
         {
-          "type": "panel",
+          "type": "paneldynamic",
           "name": "les_prestations_chaudes_le_personnel",
-          "elements": createStandPersonnel('les_prestations_chaudes').elements
+          "title": "Le personnel",
+          "templateElements": createStandPersonnel('les_prestations_chaudes').elements
         },
         ],
     };

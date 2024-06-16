@@ -1,8 +1,13 @@
+import red from './images/red.png'
+import amber from './images/amber.png'
+import green from './images/green.png'
+
 const rateValues = [
-  { "value": 1, "text": "Red" },
-  { "value": 2, "text": "Orange" },
-  { "value": 3, "text": "Green" }
+  { "value": 1, "text": "Red", "imageLink": red },
+  { "value": 2, "text": "Orange", "imageLink": amber },
+  { "value": 3, "text": "Green", "imageLink": green }
 ];
+const image_size = 50
 
 function createStandPersonnel(prefix) {
   return {
@@ -10,89 +15,119 @@ function createStandPersonnel(prefix) {
     "title": "Personnel - Stand",
     "elements": [
       {
-        "type": "panel",
+        "type": "paneldynamic",
         "name": `${prefix}_stand_personnel_panel`,
         "title": "Personnel",
-        "elements": [
+        "templateElements": [
           {
-            "type": "rating",
+            "type": "imagepicker",
             "name": `${prefix}_respect_des_procedures_d_hygiene`,
             "title": "Respect des procédures d’hygiène (absence d’utilisation de torchon, port de coiffe, de bijoux etc.)",
-            "rateType": "smileys",
-            "scaleColorMode": "colored",
-            "rateValues": rateValues
+            "imageWidth": image_size,
+            "imageHeight": image_size,
+            "choices": rateValues.map(rate => ({
+              "value": rate.value,
+              "imageLink": rate.imageLink
+            }))
           },
           {
-            "type": "rating",
+            "type": "imagepicker",
             "name": `${prefix}_uniformite_des_tenues`,
             "title": "Uniformité des tenues",
-            "rateType": "smileys",
-            "scaleColorMode": "colored",
-            "rateValues": rateValues
+            "imageWidth": image_size,
+            "imageHeight": image_size,
+            "choices": rateValues.map(rate => ({
+              "value": rate.value,
+              "imageLink": rate.imageLink
+            }))
           },
           {
-            "type": "rating",
+            "type": "imagepicker",
             "name": `${prefix}_etat_des_tenues`,
             "title": "Etat des tenues",
-            "rateType": "smileys",
-            "scaleColorMode": "colored",
-            "rateValues": rateValues
+            "imageWidth": image_size,
+            "imageHeight": image_size,
+            "choices": rateValues.map(rate => ({
+              "value": rate.value,
+              "imageLink": rate.imageLink
+            }))
           },
           {
-            "type": "rating",
+            "type": "imagepicker",
             "name": `${prefix}_proprete_des_tenues`,
             "title": "Propreté des tenues",
-            "rateType": "smileys",
-            "scaleColorMode": "colored",
-            "rateValues": rateValues
+            "imageWidth": image_size,
+            "imageHeight": image_size,
+            "choices": rateValues.map(rate => ({
+              "value": rate.value,
+              "imageLink": rate.imageLink
+            }))
           },
           {
-            "type": "rating",
+            "type": "imagepicker",
             "name": `${prefix}_le_sourire`,
             "title": "Le sourire",
-            "rateType": "smileys",
-            "scaleColorMode": "colored",
-            "rateValues": rateValues
+            "imageWidth": image_size,
+            "imageHeight": image_size,
+            "choices": rateValues.map(rate => ({
+              "value": rate.value,
+              "imageLink": rate.imageLink
+            }))
           },
           {
-            "type": "rating",
+            "type": "imagepicker",
             "name": `${prefix}_l_amabilite`,
             "title": "L'amabilité",
-            "rateType": "smileys",
-            "scaleColorMode": "colored",
-            "rateValues": rateValues
+            "imageWidth": image_size,
+            "imageHeight": image_size,
+            "choices": rateValues.map(rate => ({
+              "value": rate.value,
+              "imageLink": rate.imageLink
+            }))
           },
           {
-            "type": "rating",
+            "type": "imagepicker",
             "name": `${prefix}_la_politesse`,
             "title": "La politesse",
-            "rateType": "smileys",
-            "scaleColorMode": "colored",
-            "rateValues": rateValues
+            "imageWidth": image_size,
+            "imageHeight": image_size,
+            "choices": rateValues.map(rate => ({
+              "value": rate.value,
+              "imageLink": rate.imageLink
+            }))
           },
           {
-            "type": "rating",
+            "type": "imagepicker",
             "name": `${prefix}_la_gestuelle`,
             "title": "La gestuelle",
-            "rateType": "smileys",
-            "scaleColorMode": "colored",
-            "rateValues": rateValues
+            "imageWidth": image_size,
+            "imageHeight": image_size,
+            "choices": rateValues.map(rate => ({
+              "value": rate.value,
+              "imageLink": rate.imageLink
+            }))
           },
           {
-            "type": "rating",
+            "type": "imagepicker",
             "name": `${prefix}_l_information`,
             "title": "L'information",
-            "rateType": "smileys",
-            "scaleColorMode": "colored",
-            "rateValues": rateValues
+            "imageWidth": image_size,
+            "imageHeight": image_size,
+            "choices": rateValues.map(rate => ({
+              "value": rate.value,
+              "imageLink": rate.imageLink
+            }))
           },
           {
-            "type": "rating",
+            "type": "imagepicker",
             "name": `${prefix}_le_conseil`,
             "title": "Le conseil",
-            "rateType": "smileys",
-            "scaleColorMode": "colored",
-            "rateValues": rateValues
+            "imageWidth": image_size,
+            "imageHeight": image_size,
+            "choices": rateValues.map(rate => ({
+              "value": rate.value,
+              "imageLink": rate.imageLink
+            }))
           }
         ]
       }

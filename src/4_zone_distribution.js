@@ -1,5 +1,5 @@
 import createStandLesLocaux from './stand_les_locaux';
-import createOverallPersonnel from './overall_personnel';
+import createZoneDistributionPersonnel from './zone_distribution_personnel';
 import createMaitriseDesFlux from './maitrise_des_flux';
 import createLesPlateaux from './les_plateaux';
 import createLesCouverts from './les_couverts';
@@ -9,6 +9,7 @@ import createLesContenantsFroids from './les_contenants_froids';
 import createLesUstensilesDeService from './les_ustensiles_de_service';
 import createRespectDesHorairesDeService from './respect_des_horaires_de_service';
 import createEnvironnementDecoration from './environnement_decoration';
+
 
 const zone_distribution = {
   "name": "zone_de_distribution",
@@ -67,7 +68,7 @@ const zone_distribution = {
     {
       "type": "panel",
       "name": "zone_distribution_personnel",
-      "elements": createOverallPersonnel('zone_distribution').elements
+      "elements": createZoneDistributionPersonnel('zone_distribution').elements
     },
   ]
 };

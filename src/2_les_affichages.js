@@ -30,7 +30,7 @@ const les_affichages_generales = {
           }))
         },
       ],
-      "panelCount": 1,
+      "panelCount": 0,
       "confirmDelete": true
     },
     {
@@ -50,7 +50,7 @@ const les_affichages_generales = {
           }))
         },
       ],
-      "panelCount": 1,
+      "panelCount": 0,
       "confirmDelete": true
     },
     {
@@ -70,7 +70,7 @@ const les_affichages_generales = {
           }))
         },
       ],
-      "panelCount": 1,
+      "panelCount": 0,
       "confirmDelete": true
     }
   ]

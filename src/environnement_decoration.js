@@ -1,8 +1,13 @@
+import red from './images/red.png'
+import amber from './images/amber.png'
+import green from './images/green.png'
+
 const rateValues = [
-  {"value": 1, "text": "Red"},
-  {"value": 2, "text": "Orange"},
-  {"value": 3, "text": "Green"}
+  { "value": 1, "text": "Red", "imageLink": red },
+  { "value": 2, "text": "Orange", "imageLink": amber },
+  { "value": 3, "text": "Green", "imageLink": green }
 ];
+const image_size = 50
 
 function createEnvironnementDecoration(prefix) {
   return {
@@ -10,41 +15,53 @@ function createEnvironnementDecoration(prefix) {
     "title": "Environnement / décoration",
     "elements": [
       {
-        "type": "panel",
+        "type": "paneldynamic",
         "name": `${prefix}_environnement_decoration_panel`,
         "title": "Environnement / décoration",
-        "elements": [
+        "templateElements": [
           {
-            "type": "rating",
+            "type": "imagepicker",
             "name": `${prefix}_temperature`,
             "title": "Température",
-            "rateType": "smileys",
-            "scaleColorMode": "colored",
-            "rateValues": rateValues
+            "imageWidth": image_size,
+            "imageHeight": image_size,
+            "choices": rateValues.map(rate => ({
+              "value": rate.value,
+              "imageLink": rate.imageLink
+            }))
           },
           {
-            "type": "rating",
+            "type": "imagepicker",
             "name": `${prefix}_luminosite`,
             "title": "Luminosité",
-            "rateType": "smileys",
-            "scaleColorMode": "colored",
-            "rateValues": rateValues
+            "imageWidth": image_size,
+            "imageHeight": image_size,
+            "choices": rateValues.map(rate => ({
+              "value": rate.value,
+              "imageLink": rate.imageLink
+            }))
           },
           {
-            "type": "rating",
+            "type": "imagepicker",
             "name": `${prefix}_niveau_sonore`,
             "title": "Niveau sonore",
-            "rateType": "smileys",
-            "scaleColorMode": "colored",
-            "rateValues": rateValues
+            "imageWidth": image_size,
+            "imageHeight": image_size,
+            "choices": rateValues.map(rate => ({
+              "value": rate.value,
+              "imageLink": rate.imageLink
+            }))
           },
           {
-            "type": "rating",
+            "type": "imagepicker",
             "name": `${prefix}_fluidite_de_deplacement_pour_les_convives`,
             "title": "Fluidité de déplacement pour les convives",
-            "rateType": "smileys",
-            "scaleColorMode": "colored",
-            "rateValues": rateValues
+            "imageWidth": image_size,
+            "imageHeight": image_size,
+            "choices": rateValues.map(rate => ({
+              "value": rate.value,
+              "imageLink": rate.imageLink
+            }))
           }
         ]
       }

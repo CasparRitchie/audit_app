@@ -1,8 +1,13 @@
+import red from './images/red.png'
+import amber from './images/amber.png'
+import green from './images/green.png'
+
 const rateValues = [
-  {"value": 1, "text": "Red"},
-  {"value": 2, "text": "Orange"},
-  {"value": 3, "text": "Green"}
+  { "value": 1, "text": "Red", "imageLink": red },
+  { "value": 2, "text": "Orange", "imageLink": amber },
+  { "value": 3, "text": "Green", "imageLink": green }
 ];
+const image_size = 50
 
 function createAffichages(prefix) {
   return {
@@ -10,41 +15,53 @@ function createAffichages(prefix) {
     "title": "Les affichages",
     "elements": [
       {
-        "type": "panel",
+        "type": "paneldynamic",
         "name": `${prefix}_les_affichages_panel`,
         "title": "Les affichages",
-        "elements": [
+        "templateElements": [
           {
-            "type": "rating",
+            "type": "imagepicker",
             "name": `${prefix}_disponibilite_des_informations_sur_les_allergenes`,
             "title": "Disponibilité des informations sur les allergènes",
-            "rateType": "smileys",
-            "scaleColorMode": "colored",
-            "rateValues": rateValues
+            "imageWidth": image_size,
+            "imageHeight": image_size,
+            "choices": rateValues.map(rate => ({
+              "value": rate.value,
+              "imageLink": rate.imageLink
+            }))
           },
           {
-            "type": "rating",
+            "type": "imagepicker",
             "name": `${prefix}_visibilite_des_informations`,
             "title": "Visibilité des informations",
-            "rateType": "smileys",
-            "scaleColorMode": "colored",
-            "rateValues": rateValues
+            "imageWidth": image_size,
+            "imageHeight": image_size,
+            "choices": rateValues.map(rate => ({
+              "value": rate.value,
+              "imageLink": rate.imageLink
+            }))
           },
           {
-            "type": "rating",
+            "type": "imagepicker",
             "name": `${prefix}_information_produit`,
             "title": "Information produit",
-            "rateType": "smileys",
-            "scaleColorMode": "colored",
-            "rateValues": rateValues
+            "imageWidth": image_size,
+            "imageHeight": image_size,
+            "choices": rateValues.map(rate => ({
+              "value": rate.value,
+              "imageLink": rate.imageLink
+            }))
           },
           {
-            "type": "rating",
+            "type": "imagepicker",
             "name": `${prefix}_prix_des_produits`,
             "title": "Prix des produits",
-            "rateType": "smileys",
-            "scaleColorMode": "colored",
-            "rateValues": rateValues
+            "imageWidth": image_size,
+            "imageHeight": image_size,
+            "choices": rateValues.map(rate => ({
+              "value": rate.value,
+              "imageLink": rate.imageLink
+            }))
           }
         ]
       }

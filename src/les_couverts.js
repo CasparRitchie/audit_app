@@ -1,8 +1,13 @@
+import red from './images/red.png'
+import amber from './images/amber.png'
+import green from './images/green.png'
+
 const rateValues = [
-  {"value": 1, "text": "Red"},
-  {"value": 2, "text": "Orange"},
-  {"value": 3, "text": "Green"}
+  { "value": 1, "text": "Red", "imageLink": red },
+  { "value": 2, "text": "Orange", "imageLink": amber },
+  { "value": 3, "text": "Green", "imageLink": green }
 ];
+const image_size = 50
 
 function createLesCouverts(prefix) {
   return {
@@ -10,166 +15,218 @@ function createLesCouverts(prefix) {
     "title": "Les couverts",
     "elements": [
       {
-        "type": "panel",
+        "type": "paneldynamic",
         "name": `${prefix}_les_fourchettes`,
         "title": "Les fourchettes",
-        "elements": [
-          {
-            "type": "rating",
-            "name": `${prefix}_disponibilite_des_fourchettes`,
-            "title": "Disponibilité des fourchettes",
-            "rateType": "smileys",
-            "scaleColorMode": "colored",
-            "rateValues": rateValues
-          },
-          {
-            "type": "rating",
-            "name": `${prefix}_etat_des_fourchettes`,
-            "title": "Etat des fourchettes",
-            "rateType": "smileys",
-            "scaleColorMode": "colored",
-            "rateValues": rateValues
-          },
-          {
-            "type": "rating",
-            "name": `${prefix}_proprete_fourchettes`,
-            "title": "Propreté fourchettes",
-            "rateType": "smileys",
-            "scaleColorMode": "colored",
-            "rateValues": rateValues
-          },
-          {
-            "type": "rating",
-            "name": `${prefix}_traces_de_calcaire_sur_les_fourchettes`,
-            "title": "Traces de calcaire sur les fourchettes",
-            "rateType": "smileys",
-            "scaleColorMode": "colored",
-            "rateValues": rateValues
-          }
-        ]
-      },
+        "templateElements":[
+            {
+              "type": "imagepicker",
+              "name": `${prefix}_disponibilite_des_fourchettes`,
+              "title": "Disponibilité des fourchettes",
+              "imageWidth": image_size,
+              "imageHeight": image_size,
+              "choices": rateValues.map(rate => ({
+                "value": rate.value,
+                "imageLink": rate.imageLink
+              }))
+            },
+            {
+              "type": "imagepicker",
+              "name": `${prefix}_etat_des_fourchettes`,
+              "title": "Etat des fourchettes",
+              "imageWidth": image_size,
+              "imageHeight": image_size,
+              "choices": rateValues.map(rate => ({
+                "value": rate.value,
+                "imageLink": rate.imageLink
+              }))
+            },
+            {
+              "type": "imagepicker",
+              "name": `${prefix}_proprete_fourchettes`,
+              "title": "Propreté fourchettes",
+              "imageWidth": image_size,
+              "imageHeight": image_size,
+              "choices": rateValues.map(rate => ({
+                "value": rate.value,
+                "imageLink": rate.imageLink
+              }))
+            },
+            {
+              "type": "imagepicker",
+              "name": `${prefix}_traces_de_calcaire_sur_les_fourchettes`,
+              "title": "Traces de calcaire sur les fourchettes",
+              "imageWidth": image_size,
+              "imageHeight": image_size,
+              "choices": rateValues.map(rate => ({
+                "value": rate.value,
+                "imageLink": rate.imageLink
+              }))
+            }
+          ]
+
+        },
       {
-        "type": "panel",
+        "type": "paneldynamic",
         "name": `${prefix}_les_couteaux`,
         "title": "Les couteaux",
-        "elements": [
+        "templateElements": [
           {
-            "type": "rating",
+            "type": "imagepicker",
             "name": `${prefix}_disponibilite_des_couteaux`,
             "title": "Disponibilité des couteaux",
-            "rateType": "smileys",
-            "scaleColorMode": "colored",
-            "rateValues": rateValues
+            "imageWidth": image_size,
+            "imageHeight": image_size,
+            "choices": rateValues.map(rate => ({
+              "value": rate.value,
+              "imageLink": rate.imageLink
+            }))
           },
           {
-            "type": "rating",
+            "type": "imagepicker",
             "name": `${prefix}_etat_des_couteaux`,
             "title": "Etat des couteaux",
-            "rateType": "smileys",
-            "scaleColorMode": "colored",
-            "rateValues": rateValues
+            "imageWidth": image_size,
+            "imageHeight": image_size,
+            "choices": rateValues.map(rate => ({
+              "value": rate.value,
+              "imageLink": rate.imageLink
+            }))
           },
           {
-            "type": "rating",
+            "type": "imagepicker",
             "name": `${prefix}_proprete_couteaux`,
             "title": "Propreté couteaux",
-            "rateType": "smileys",
-            "scaleColorMode": "colored",
-            "rateValues": rateValues
+            "imageWidth": image_size,
+            "imageHeight": image_size,
+            "choices": rateValues.map(rate => ({
+              "value": rate.value,
+              "imageLink": rate.imageLink
+            }))
           },
           {
-            "type": "rating",
+            "type": "imagepicker",
             "name": `${prefix}_traces_de_calcaire_sur_les_couteaux`,
             "title": "Traces de calcaire sur les couteaux",
-            "rateType": "smileys",
-            "scaleColorMode": "colored",
-            "rateValues": rateValues
+            "imageWidth": image_size,
+            "imageHeight": image_size,
+            "choices": rateValues.map(rate => ({
+              "value": rate.value,
+              "imageLink": rate.imageLink
+            }))
           }
         ]
       },
       {
-        "type": "panel",
+        "type": "paneldynamic",
         "name": `${prefix}_les_petites_cuilleres`,
         "title": "Les petites cuillères",
-        "elements": [
+        "templateElements": [
           {
-            "type": "rating",
+            "type": "imagepicker",
             "name": `${prefix}_disponibilite_des_petites_cuilleres`,
             "title": "Disponibilité des petites cuillères",
-            "rateType": "smileys",
-            "scaleColorMode": "colored",
-            "rateValues": rateValues
+            "imageWidth": image_size,
+            "imageHeight": image_size,
+            "choices": rateValues.map(rate => ({
+              "value": rate.value,
+              "imageLink": rate.imageLink
+            }))
           },
           {
-            "type": "rating",
+            "type": "imagepicker",
             "name": `${prefix}_etat_des_petites_cuilleres`,
             "title": "Etat des petites cuillères",
-            "rateType": "smileys",
-            "scaleColorMode": "colored",
-            "rateValues": rateValues
+            "imageWidth": image_size,
+            "imageHeight": image_size,
+            "choices": rateValues.map(rate => ({
+              "value": rate.value,
+              "imageLink": rate.imageLink
+            }))
           },
           {
-            "type": "rating",
+            "type": "imagepicker",
             "name": `${prefix}_proprete_petites_cuilleres`,
             "title": "Propreté petites cuillères",
-            "rateType": "smileys",
-            "scaleColorMode": "colored",
-            "rateValues": rateValues
+            "imageWidth": image_size,
+            "imageHeight": image_size,
+            "choices": rateValues.map(rate => ({
+              "value": rate.value,
+              "imageLink": rate.imageLink
+            }))
           },
           {
-            "type": "rating",
+            "type": "imagepicker",
             "name": `${prefix}_traces_de_calcaire_sur_les_petites_cuilleres`,
             "title": "Traces de calcaire sur les petites cuillères",
-            "rateType": "smileys",
-            "scaleColorMode": "colored",
-            "rateValues": rateValues
+            "imageWidth": image_size,
+            "imageHeight": image_size,
+            "choices": rateValues.map(rate => ({
+              "value": rate.value,
+              "imageLink": rate.imageLink
+            }))
           }
         ]
       },
       {
-        "type": "panel",
+        "type": "paneldynamic",
         "name": `${prefix}_les_verres`,
         "title": "Les verres",
-        "elements": [
+        "templateElements": [
           {
-            "type": "rating",
+            "type": "imagepicker",
             "name": `${prefix}_disponibilite_des_verres`,
             "title": "Disponibilité",
-            "rateType": "smileys",
-            "scaleColorMode": "colored",
-            "rateValues": rateValues
+            "imageWidth": image_size,
+            "imageHeight": image_size,
+            "choices": rateValues.map(rate => ({
+              "value": rate.value,
+              "imageLink": rate.imageLink
+            }))
           },
           {
-            "type": "rating",
+            "type": "imagepicker",
             "name": `${prefix}_etat_des_verres`,
             "title": "Etat",
-            "rateType": "smileys",
-            "scaleColorMode": "colored",
-            "rateValues": rateValues
+            "imageWidth": image_size,
+            "imageHeight": image_size,
+            "choices": rateValues.map(rate => ({
+              "value": rate.value,
+              "imageLink": rate.imageLink
+            }))
           },
           {
-            "type": "rating",
+            "type": "imagepicker",
             "name": `${prefix}_proprete_des_verres`,
             "title": "Propreté",
-            "rateType": "smileys",
-            "scaleColorMode": "colored",
-            "rateValues": rateValues
+            "imageWidth": image_size,
+            "imageHeight": image_size,
+            "choices": rateValues.map(rate => ({
+              "value": rate.value,
+              "imageLink": rate.imageLink
+            }))
           },
           {
-            "type": "rating",
+            "type": "imagepicker",
             "name": `${prefix}_traces_de_calcaire_sur_les_verres`,
             "title": "Traces de calcaire sur les verres",
-            "rateType": "smileys",
-            "scaleColorMode": "colored",
-            "rateValues": rateValues
+            "imageWidth": image_size,
+            "imageHeight": image_size,
+            "choices": rateValues.map(rate => ({
+              "value": rate.value,
+              "imageLink": rate.imageLink
+            }))
           },
           {
-            "type": "rating",
+            "type": "imagepicker",
             "name": `${prefix}_nette_des_verres`,
             "title": "Netteté des verres",
-            "rateType": "smileys",
-            "scaleColorMode": "colored",
-            "rateValues": rateValues
+            "imageWidth": image_size,
+            "imageHeight": image_size,
+            "choices": rateValues.map(rate => ({
+              "value": rate.value,
+              "imageLink": rate.imageLink
+            }))
           }
         ]
       }

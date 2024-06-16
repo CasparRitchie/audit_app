@@ -23,43 +23,60 @@ function createAffichage(prefix) {
             "type": "imagepicker",
             "name": `${prefix}_presence_d_un_affichage_affichage`,
             "title": "Présence d'un affichage",
-            "rateType": "smileys",
-            "scaleColorMode": "colored",
-            "rateValues": rateValues
+            "imageWidth": image_size,
+            "imageHeight": image_size,
+            "choices": rateValues.map(rate => ({
+              "value": rate.value,
+              "imageLink": rate.imageLink
+            }))
           },
           {
             "type": "imagepicker",
             "name": `${prefix}_qualite_de_l_affichage_affichage`,
             "title": "Qualité de l'affichage",
-            "rateType": "smileys",
-            "scaleColorMode": "colored",
-            "rateValues": rateValues
+            "imageWidth": image_size,
+            "imageHeight": image_size,
+            "choices": rateValues.map(rate => ({
+              "value": rate.value,
+              "imageLink": rate.imageLink
+            }))
           },
           {
             "type": "imagepicker",
             "name": `${prefix}_lisibilite_des_informations_affichage`,
             "title": "Lisibilité des informations",
-            "rateType": "smileys",
-            "scaleColorMode": "colored",
-            "rateValues": rateValues
+            "imageWidth": image_size,
+            "imageHeight": image_size,
+            "choices": rateValues.map(rate => ({
+              "value": rate.value,
+              "imageLink": rate.imageLink
+            }))
           },
           {
             "type": "imagepicker",
             "name": `${prefix}_precision_des_informations_affichage`,
             "title": "Précision des informations",
-            "rateType": "smileys",
-            "scaleColorMode": "colored",
-            "rateValues": rateValues
+            "imageWidth": image_size,
+            "imageHeight": image_size,
+            "choices": rateValues.map(rate => ({
+              "value": rate.value,
+              "imageLink": rate.imageLink
+            }))
           },
           {
             "type": "imagepicker",
             "name": `${prefix}_indication_du_prix_affichage`,
             "title": "Indication du prix",
-            "rateType": "smileys",
-            "scaleColorMode": "colored",
-            "rateValues": rateValues
+            "imageWidth": image_size,
+            "imageHeight": image_size,
+            "choices": rateValues.map(rate => ({
+              "value": rate.value,
+              "imageLink": rate.imageLink
+            }))
           }
-        ]
+        ],
+        "panelCount": 1,
+        "confirmDelete": true
       }
     ]
   };
