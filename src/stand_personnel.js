@@ -1,15 +1,19 @@
-import red from './images/red.png'
-import amber from './images/amber.png'
-import green from './images/green.png'
-
-const rateValues = [
-  { "value": 1, "text": "Red", "imageLink": red },
-  { "value": 2, "text": "Orange", "imageLink": amber },
-  { "value": 3, "text": "Green", "imageLink": green }
-];
-const image_size = 50
+import { createImagePickerElement } from './createImagePickerElement';
 
 function createStandPersonnel(prefix) {
+  const questions = [
+    { name: "respect_des_procedures_d_hygiene", title: "Respect des procédures d’hygiène (absence d’utilisation de torchon, port de coiffe, de bijoux etc.)" },
+    { name: "uniformite_des_tenues", title: "Uniformité des tenues" },
+    { name: "etat_des_tenues", title: "Etat des tenues" },
+    { name: "proprete_des_tenues", title: "Propreté des tenues" },
+    { name: "le_sourire", title: "Le sourire" },
+    { name: "l_amabilite", title: "L'amabilité" },
+    { name: "la_politesse", title: "La politesse" },
+    { name: "la_gestuelle", title: "La gestuelle" },
+    { name: "l_information", title: "L'information" },
+    { name: "le_conseil", title: "Le conseil" }
+  ];
+
   return {
     "name": `${prefix}_stand_personnel`,
     "title": "Personnel - Stand",
@@ -18,118 +22,9 @@ function createStandPersonnel(prefix) {
         "type": "paneldynamic",
         "name": `${prefix}_stand_personnel_panel`,
         "title": "Personnel",
-        "templateElements": [
-          {
-            "type": "imagepicker",
-            "name": `${prefix}_respect_des_procedures_d_hygiene`,
-            "title": "Respect des procédures d’hygiène (absence d’utilisation de torchon, port de coiffe, de bijoux etc.)",
-            "imageWidth": image_size,
-            "imageHeight": image_size,
-            "choices": rateValues.map(rate => ({
-              "value": rate.value,
-              "imageLink": rate.imageLink
-            }))
-          },
-          {
-            "type": "imagepicker",
-            "name": `${prefix}_uniformite_des_tenues`,
-            "title": "Uniformité des tenues",
-            "imageWidth": image_size,
-            "imageHeight": image_size,
-            "choices": rateValues.map(rate => ({
-              "value": rate.value,
-              "imageLink": rate.imageLink
-            }))
-          },
-          {
-            "type": "imagepicker",
-            "name": `${prefix}_etat_des_tenues`,
-            "title": "Etat des tenues",
-            "imageWidth": image_size,
-            "imageHeight": image_size,
-            "choices": rateValues.map(rate => ({
-              "value": rate.value,
-              "imageLink": rate.imageLink
-            }))
-          },
-          {
-            "type": "imagepicker",
-            "name": `${prefix}_proprete_des_tenues`,
-            "title": "Propreté des tenues",
-            "imageWidth": image_size,
-            "imageHeight": image_size,
-            "choices": rateValues.map(rate => ({
-              "value": rate.value,
-              "imageLink": rate.imageLink
-            }))
-          },
-          {
-            "type": "imagepicker",
-            "name": `${prefix}_le_sourire`,
-            "title": "Le sourire",
-            "imageWidth": image_size,
-            "imageHeight": image_size,
-            "choices": rateValues.map(rate => ({
-              "value": rate.value,
-              "imageLink": rate.imageLink
-            }))
-          },
-          {
-            "type": "imagepicker",
-            "name": `${prefix}_l_amabilite`,
-            "title": "L'amabilité",
-            "imageWidth": image_size,
-            "imageHeight": image_size,
-            "choices": rateValues.map(rate => ({
-              "value": rate.value,
-              "imageLink": rate.imageLink
-            }))
-          },
-          {
-            "type": "imagepicker",
-            "name": `${prefix}_la_politesse`,
-            "title": "La politesse",
-            "imageWidth": image_size,
-            "imageHeight": image_size,
-            "choices": rateValues.map(rate => ({
-              "value": rate.value,
-              "imageLink": rate.imageLink
-            }))
-          },
-          {
-            "type": "imagepicker",
-            "name": `${prefix}_la_gestuelle`,
-            "title": "La gestuelle",
-            "imageWidth": image_size,
-            "imageHeight": image_size,
-            "choices": rateValues.map(rate => ({
-              "value": rate.value,
-              "imageLink": rate.imageLink
-            }))
-          },
-          {
-            "type": "imagepicker",
-            "name": `${prefix}_l_information`,
-            "title": "L'information",
-            "imageWidth": image_size,
-            "imageHeight": image_size,
-            "choices": rateValues.map(rate => ({
-              "value": rate.value,
-              "imageLink": rate.imageLink
-            }))
-          },
-          {
-            "type": "imagepicker",
-            "name": `${prefix}_le_conseil`,
-            "title": "Le conseil",
-            "imageWidth": image_size,
-            "imageHeight": image_size,
-            "choices": rateValues.map(rate => ({
-              "value": rate.value,
-              "imageLink": rate.imageLink
-            }))
-          }
-        ]
+        "templateElements": questions.map(question =>
+          createImagePickerElement(prefix, question.name, question.title)
+        )
       }
     ]
   };

@@ -1,13 +1,4 @@
-import red from './images/red.png'
-import amber from './images/amber.png'
-import green from './images/green.png'
-
-const rateValues = [
-  { "value": 1, "text": "Red", "imageLink": red },
-  { "value": 2, "text": "Orange", "imageLink": amber },
-  { "value": 3, "text": "Green", "imageLink": green }
-];
-const image_size = 50
+import { createImagePickerElement } from './createImagePickerElement';
 
 function createOverallPersonnel(prefix) {
   return {
@@ -19,191 +10,31 @@ function createOverallPersonnel(prefix) {
         "name": `${prefix}_personnel_overall_panel`,
         "title": "Personnel - Overall",
         "templateElements": [
-          {
-            "type": "imagepicker",
-            "name": `${prefix}_respect_des_procedures_d_hygiene`,
-            "title": "Respect des procédures d’hygiène (absence d’utilisation de torchon, port de la coiffe règlementaire, port de bijoux, etc.)",
-            "imageWidth": image_size,
-            "imageHeight": image_size,
-            "choices": rateValues.map(rate => ({
-              "value": rate.value,
-              "imageLink": rate.imageLink
-            }))
-          },
-          {
-            "type": "imagepicker",
-            "name": `${prefix}_uniformite_des_tenues`,
-            "title": "Uniformité des tenues",
-            "imageWidth": image_size,
-            "imageHeight": image_size,
-            "choices": rateValues.map(rate => ({
-              "value": rate.value,
-              "imageLink": rate.imageLink
-            }))
-          },
-          {
-            "type": "imagepicker",
-            "name": `${prefix}_etat_des_tenues`,
-            "title": "Etat des tenues",
-            "imageWidth": image_size,
-            "imageHeight": image_size,
-            "choices": rateValues.map(rate => ({
-              "value": rate.value,
-              "imageLink": rate.imageLink
-            }))
-          },
-          {
-            "type": "imagepicker",
-            "name": `${prefix}_proprete_des_tenues`,
-            "title": "Propreté des tenues",
-            "imageWidth": image_size,
-            "imageHeight": image_size,
-            "choices": rateValues.map(rate => ({
-              "value": rate.value,
-              "imageLink": rate.imageLink
-            }))
-          },
-          {
-            "type": "imagepicker",
-            "name": `${prefix}_adequation_tenue_fonction`,
-            "title": "Adéquation tenue / fonction",
-            "imageWidth": image_size,
-            "imageHeight": image_size,
-            "choices": rateValues.map(rate => ({
-              "value": rate.value,
-              "imageLink": rate.imageLink
-            }))
-          },
+          createImagePickerElement(prefix, "respect_des_procedures_d_hygiene", "Respect des procédures d’hygiène (absence d’utilisation de torchon, port de la coiffe règlementaire, port de bijoux, etc.)"),
+          createImagePickerElement(prefix, "uniformite_des_tenues", "Uniformité des tenues"),
+          createImagePickerElement(prefix, "etat_des_tenues", "Etat des tenues"),
+          createImagePickerElement(prefix, "proprete_des_tenues", "Propreté des tenues"),
+          createImagePickerElement(prefix, "adequation_tenue_fonction", "Adéquation tenue / fonction"),
           {
             "type": "radiogroup",
             "name": `${prefix}_convive_salue`,
             "title": "A son arrivée le convive est-il salué ('Bonjour') ?",
             "choices": [
-              {"value": "oui", "text": "Oui"},
-              {"value": "non", "text": "Non"}
+              { "value": "oui", "text": "Oui" },
+              { "value": "non", "text": "Non" }
             ]
           },
-          {
-            "type": "imagepicker",
-            "name": `${prefix}_personnel_poli_aimable`,
-            "title": "Le personnel est-il poli et aimable ?",
-            "imageWidth": image_size,
-            "imageHeight": image_size,
-            "choices": rateValues.map(rate => ({
-              "value": rate.value,
-              "imageLink": rate.imageLink
-            }))
-          },
-          {
-            "type": "imagepicker",
-            "name": `${prefix}_personnel_souriant`,
-            "title": "Le personnel est-il souriant ?",
-            "imageWidth": image_size,
-            "imageHeight": image_size,
-            "choices": rateValues.map(rate => ({
-              "value": rate.value,
-              "imageLink": rate.imageLink
-            }))
-          },
-          {
-            "type": "imagepicker",
-            "name": `${prefix}_personnel_attentif`,
-            "title": "Le personnel est-il attentif ?",
-            "imageWidth": image_size,
-            "imageHeight": image_size,
-            "choices": rateValues.map(rate => ({
-              "value": rate.value,
-              "imageLink": rate.imageLink
-            }))
-          },
-          {
-            "type": "imagepicker",
-            "name": `${prefix}_echanges_clairs_efficaces`,
-            "title": "Les échanges aves le personnel sont-ils clairs, efficaces et facilement compris ?",
-            "imageWidth": image_size,
-            "imageHeight": image_size,
-            "choices": rateValues.map(rate => ({
-              "value": rate.value,
-              "imageLink": rate.imageLink
-            }))
-          },
-          {
-            "type": "imagepicker",
-            "name": `${prefix}_souhaite_bon_appetit`,
-            "title": "Le personnel souhaite t-il un 'bon appétit' (ou toute autre formule équivalente) lors de la remise de la",
-            "imageWidth": image_size,
-            "imageHeight": image_size,
-            "choices": rateValues.map(rate => ({
-              "value": rate.value,
-              "imageLink": rate.imageLink
-            }))
-          },
-          {
-            "type": "imagepicker",
-            "name": `${prefix}_gestes_de_service`,
-            "title": "Les gestes de service",
-            "imageWidth": image_size,
-            "imageHeight": image_size,
-            "choices": rateValues.map(rate => ({
-              "value": rate.value,
-              "imageLink": rate.imageLink
-            }))
-          },
-          {
-            "type": "imagepicker",
-            "name": `${prefix}_reactivite`,
-            "title": "La réactivité",
-            "imageWidth": image_size,
-            "imageHeight": image_size,
-            "choices": rateValues.map(rate => ({
-              "value": rate.value,
-              "imageLink": rate.imageLink
-            }))
-          },
-          {
-            "type": "imagepicker",
-            "name": `${prefix}_rapidite_de_service`,
-            "title": "La rapidité de service",
-            "imageWidth": image_size,
-            "imageHeight": image_size,
-            "choices": rateValues.map(rate => ({
-              "value": rate.value,
-              "imageLink": rate.imageLink
-            }))
-          },
-          {
-            "type": "imagepicker",
-            "name": `${prefix}_autonomie`,
-            "title": "L'autonomie",
-            "imageWidth": image_size,
-            "imageHeight": image_size,
-            "choices": rateValues.map(rate => ({
-              "value": rate.value,
-              "imageLink": rate.imageLink
-            }))
-          },
-          {
-            "type": "imagepicker",
-            "name": `${prefix}_l_information`,
-            "title": "L'information",
-            "imageWidth": image_size,
-            "imageHeight": image_size,
-            "choices": rateValues.map(rate => ({
-              "value": rate.value,
-              "imageLink": rate.imageLink
-            }))
-          },
-          {
-            "type": "imagepicker",
-            "name": `${prefix}_le_conseil`,
-            "title": "Le conseil",
-            "imageWidth": image_size,
-            "imageHeight": image_size,
-            "choices": rateValues.map(rate => ({
-              "value": rate.value,
-              "imageLink": rate.imageLink
-            }))
-          }
+          createImagePickerElement(prefix, "personnel_poli_aimable", "Le personnel est-il poli et aimable ?"),
+          createImagePickerElement(prefix, "personnel_souriant", "Le personnel est-il souriant ?"),
+          createImagePickerElement(prefix, "personnel_attentif", "Le personnel est-il attentif ?"),
+          createImagePickerElement(prefix, "echanges_clairs_efficaces", "Les échanges aves le personnel sont-ils clairs, efficaces et facilement compris ?"),
+          createImagePickerElement(prefix, "souhaite_bon_appetit", "Le personnel souhaite t-il un 'bon appétit' (ou toute autre formule équivalente) lors de la remise de la"),
+          createImagePickerElement(prefix, "gestes_de_service", "Les gestes de service"),
+          createImagePickerElement(prefix, "reactivite", "La réactivité"),
+          createImagePickerElement(prefix, "rapidite_de_service", "La rapidité de service"),
+          createImagePickerElement(prefix, "autonomie", "L'autonomie"),
+          createImagePickerElement(prefix, "l_information", "L'information"),
+          createImagePickerElement(prefix, "le_conseil", "Le conseil")
         ]
       }
     ]

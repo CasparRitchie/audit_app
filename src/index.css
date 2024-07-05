@@ -1,17 +1,17 @@
 body{
   --main-color: #D30E7F !important;
-  font-family: 'Roboto Medium', Arial, sans-serif;
+  font-family: 'Roboto Medium', sans-serif;
   --add-button-color: #9AC94E
 }
 
 /* font for dropdowns etc */
 #root{
-  font-family: 'Roboto Medium', Arial, sans-serif !important;
+  font-family: 'Roboto Medium', sans-serif !important;
 
 }
 /* font for Experience convive header */
 div{
-  font-family: 'Roboto Medium', Arial, sans-serif !important;
+  font-family: 'Roboto Medium', sans-serif !important;
 
 }
 h4{
@@ -20,7 +20,10 @@ h4{
 }
 
 .sv-paneldynamic__add-btn{
-  background-color: #9AC94E
+  background-color: #9AC94E;
+  width: 100%;
+  text-align: center;
+  margin: auto;
 }
 .sv-paneldynamic__remove-btn{
   background-color: #D30E7F;
@@ -31,7 +34,7 @@ h4{
 }
 
 .sv-body__timer, .sv-body__page{
-/* background-color: aqua; */
+  background-color: white;
 }
 
 
@@ -53,4 +56,11 @@ h4{
 .sv_q_paneldynamic__footer {
   display: flex;
   justify-content: flex-end;
+}
+
+
+/* styles.css */
+div[id^="sq_"] {
+  background-color: #ecf7f4;
+  padding: 10px;
 }

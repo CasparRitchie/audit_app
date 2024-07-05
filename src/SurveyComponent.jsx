@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import 'survey-react/modern.css';
 import { StylesManager, Model, Survey } from 'survey-react';
+import axios from 'axios';
 
 // import pages
 import page_accueil from './1_page_d_accueil';
@@ -29,8 +30,7 @@ class SurveyComponent extends Component {
         le_personnel,
         zone_distribution_reduit,
         les_prestations_chaudes,
-        les_hors_d_oeuvre,
-
+        les_hors_d_oeuvre
       ],
       "sendResultOnPageNext": true,
       "showPageNumbers": true,
@@ -38,6 +38,7 @@ class SurveyComponent extends Component {
       "progressBarType": "questions",
       "showTOC": true,
       "pageNextText": "Suivant",
+      "pagePrevText": "Précédent",
       "completeText": "Finaliser audit",
       "showPreviewBeforeComplete": "showAnsweredQuestions",
       "widthMode": "responsive"
@@ -46,6 +47,13 @@ class SurveyComponent extends Component {
     this.survey = new Model(this.surveyJson);
     this.survey.onComplete.add((sender) => {
       console.log("Survey Results:", sender.data);
+      axios.post('http://localhost:3001/submit-survey', sender.data)
+        .then(response => {
+          console.log(response.data);
+        })
+        .catch(error => {
+          console.error('There was an error submitting the survey!', error);
+        });
     });
   }
 

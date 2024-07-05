@@ -1,3 +1,5 @@
+import { createTextElement } from './createTextElement';
+
 function createTemperatureRecording(prefix) {
   return {
     "name": `${prefix}_releves_des_temperatures`,
@@ -8,17 +10,8 @@ function createTemperatureRecording(prefix) {
         "name": `${prefix}_temperature_recordings`,
         "title": "Relevés des températures des plats",
         "templateElements": [
-          {
-            "type": "text",
-            "name": `${prefix}_nom_du_plat`,
-            "title": "Nom du plat"
-          },
-          {
-            "type": "text",
-            "name": `${prefix}_temperature`,
-            "title": "Température",
-            "inputType": "number"
-          }
+          createTextElement(prefix, "nom_du_plat", "Nom du plat"),
+          createTextElement(prefix, "temperature", "Température", "number")
         ],
         "panelAddText": "Ajouter un relevé de température",
         "panelRemoveText": "Supprimer ce relevé de température",

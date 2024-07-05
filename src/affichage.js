@@ -1,13 +1,4 @@
-import red from './images/red.png'
-import amber from './images/amber.png'
-import green from './images/green.png'
-
-const rateValues = [
-  { "value": 1, "text": "Red", "imageLink": red },
-  { "value": 2, "text": "Orange", "imageLink": amber },
-  { "value": 3, "text": "Green", "imageLink": green }
-];
-const image_size = 50
+import { createImagePickerElement } from './createImagePickerElement';
 
 function createAffichage(prefix) {
   return {
@@ -19,61 +10,11 @@ function createAffichage(prefix) {
         "name": `${prefix}_affichage_affichage`,
         "title": "Affichage",
         "templateElements": [
-          {
-            "type": "imagepicker",
-            "name": `${prefix}_presence_d_un_affichage_affichage`,
-            "title": "Présence d'un affichage",
-            "imageWidth": image_size,
-            "imageHeight": image_size,
-            "choices": rateValues.map(rate => ({
-              "value": rate.value,
-              "imageLink": rate.imageLink
-            }))
-          },
-          {
-            "type": "imagepicker",
-            "name": `${prefix}_qualite_de_l_affichage_affichage`,
-            "title": "Qualité de l'affichage",
-            "imageWidth": image_size,
-            "imageHeight": image_size,
-            "choices": rateValues.map(rate => ({
-              "value": rate.value,
-              "imageLink": rate.imageLink
-            }))
-          },
-          {
-            "type": "imagepicker",
-            "name": `${prefix}_lisibilite_des_informations_affichage`,
-            "title": "Lisibilité des informations",
-            "imageWidth": image_size,
-            "imageHeight": image_size,
-            "choices": rateValues.map(rate => ({
-              "value": rate.value,
-              "imageLink": rate.imageLink
-            }))
-          },
-          {
-            "type": "imagepicker",
-            "name": `${prefix}_precision_des_informations_affichage`,
-            "title": "Précision des informations",
-            "imageWidth": image_size,
-            "imageHeight": image_size,
-            "choices": rateValues.map(rate => ({
-              "value": rate.value,
-              "imageLink": rate.imageLink
-            }))
-          },
-          {
-            "type": "imagepicker",
-            "name": `${prefix}_indication_du_prix_affichage`,
-            "title": "Indication du prix",
-            "imageWidth": image_size,
-            "imageHeight": image_size,
-            "choices": rateValues.map(rate => ({
-              "value": rate.value,
-              "imageLink": rate.imageLink
-            }))
-          }
+          createImagePickerElement(prefix, "presence_d_un_affichage_affichage", "Présence d'un affichage"),
+          createImagePickerElement(prefix, "qualite_de_l_affichage_affichage", "Qualité de l'affichage"),
+          createImagePickerElement(prefix, "lisibilite_des_informations_affichage", "Lisibilité des informations"),
+          createImagePickerElement(prefix, "precision_des_informations_affichage", "Précision des informations"),
+          createImagePickerElement(prefix, "indication_du_prix_affichage", "Indication du prix")
         ],
         "panelCount": 1,
         "confirmDelete": true

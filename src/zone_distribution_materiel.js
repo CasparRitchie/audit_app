@@ -1,10 +1,19 @@
-const rateValues = [
-  { "value": 1, "text": "Red" },
-  { "value": 2, "text": "Orange" },
-  { "value": 3, "text": "Green" }
-];
+import { createImagePickerElement } from './createImagePickerElement';
 
 function createZoneDistributionMateriel(prefix) {
+  const questions = [
+    { name: "etat_des_hottes", title: "Etat des hottes" },
+    { name: "proprete_des_hottes", title: "Propreté des hottes" },
+    { name: "etat_des_stands", title: "Etat des stands" },
+    { name: "proprete_des_stands", title: "Propreté des stands" },
+    { name: "etat_des_vitrines", title: "Etat des vitrines" },
+    { name: "proprete_des_vitrines", title: "Propreté des vitrines" },
+    { name: "etat_des_ilots", title: "Etat des îlots" },
+    { name: "proprete_des_ilots", title: "Propreté des îlots" },
+    { name: "etat_des_vitres", title: "Etat des vitres" },
+    { name: "proprete_des_vitres", title: "Propreté des vitres" }
+  ];
+
   return {
     "name": `${prefix}_zone_distribution_materiel`,
     "title": "Zone de distribution - Le matériel",
@@ -13,88 +22,9 @@ function createZoneDistributionMateriel(prefix) {
         "type": "panel",
         "name": `${prefix}_le_materiel_panel`,
         "title": "Le matériel",
-        "elements": [
-          {
-            "type": "rating",
-            "name": `${prefix}_etat_des_hottes`,
-            "title": "Etat des hottes",
-            "rateType": "smileys",
-            "scaleColorMode": "colored",
-            "rateValues": rateValues
-          },
-          {
-            "type": "rating",
-            "name": `${prefix}_proprete_des_hottes`,
-            "title": "Propreté des hottes",
-            "rateType": "smileys",
-            "scaleColorMode": "colored",
-            "rateValues": rateValues
-          },
-          {
-            "type": "rating",
-            "name": `${prefix}_etat_des_stands`,
-            "title": "Etat des stands",
-            "rateType": "smileys",
-            "scaleColorMode": "colored",
-            "rateValues": rateValues
-          },
-          {
-            "type": "rating",
-            "name": `${prefix}_proprete_des_stands`,
-            "title": "Propreté des stands",
-            "rateType": "smileys",
-            "scaleColorMode": "colored",
-            "rateValues": rateValues
-          },
-          {
-            "type": "rating",
-            "name": `${prefix}_etat_des_vitrines`,
-            "title": "Etat des vitrines",
-            "rateType": "smileys",
-            "scaleColorMode": "colored",
-            "rateValues": rateValues
-          },
-          {
-            "type": "rating",
-            "name": `${prefix}_proprete_des_vitrines`,
-            "title": "Propreté des vitrines",
-            "rateType": "smileys",
-            "scaleColorMode": "colored",
-            "rateValues": rateValues
-          },
-          {
-            "type": "rating",
-            "name": `${prefix}_etat_des_ilots`,
-            "title": "Etat des îlots",
-            "rateType": "smileys",
-            "scaleColorMode": "colored",
-            "rateValues": rateValues
-          },
-          {
-            "type": "rating",
-            "name": `${prefix}_proprete_des_ilots`,
-            "title": "Propreté des îlots",
-            "rateType": "smileys",
-            "scaleColorMode": "colored",
-            "rateValues": rateValues
-          },
-          {
-            "type": "rating",
-            "name": `${prefix}_etat_des_vitres`,
-            "title": "Etat des vitres",
-            "rateType": "smileys",
-            "scaleColorMode": "colored",
-            "rateValues": rateValues
-          },
-          {
-            "type": "rating",
-            "name": `${prefix}_proprete_des_vitres`,
-            "title": "Propreté des vitres",
-            "rateType": "smileys",
-            "scaleColorMode": "colored",
-            "rateValues": rateValues
-          }
-        ]
+        "elements": questions.map(question =>
+          createImagePickerElement(prefix, question.name, question.title)
+        )
       }
     ]
   };

@@ -1,13 +1,4 @@
-import red from './images/red.png'
-import amber from './images/amber.png'
-import green from './images/green.png'
-
-const rateValues = [
-  { "value": 1, "text": "Red", "imageLink": red },
-  { "value": 2, "text": "Orange", "imageLink": amber },
-  { "value": 3, "text": "Green", "imageLink": green }
-];
-const image_size = 50
+import { createImagePickerElement } from './createImagePickerElement';
 
 function createLesPlateaux(prefix) {
   return {
@@ -19,39 +10,9 @@ function createLesPlateaux(prefix) {
         "name": `${prefix}_les_plateaux_panel`,
         "title": "Les Plateaux",
         "templateElements": [
-          {
-            "type": "imagepicker",
-            "name": `${prefix}_disponibilite`,
-            "title": "Disponibilité",
-            "imageWidth": image_size,
-            "imageHeight": image_size,
-            "choices": rateValues.map(rate => ({
-              "value": rate.value,
-              "imageLink": rate.imageLink
-            }))
-          },
-          {
-            "type": "imagepicker",
-            "name": `${prefix}_etat`,
-            "title": "Etat",
-          "imageWidth": image_size,
-          "imageHeight": image_size,
-          "choices": rateValues.map(rate => ({
-            "value": rate.value,
-            "imageLink": rate.imageLink
-          }))
-          },
-          {
-            "type": "imagepicker",
-            "name": `${prefix}_proprete`,
-            "title": "Propreté",
-          "imageWidth": image_size,
-          "imageHeight": image_size,
-          "choices": rateValues.map(rate => ({
-            "value": rate.value,
-            "imageLink": rate.imageLink
-          }))
-          },
+          createImagePickerElement(prefix, "disponibilite", "Disponibilité"),
+          createImagePickerElement(prefix, "etat", "Etat"),
+          createImagePickerElement(prefix, "proprete", "Propreté"),
           {
             "type": "radiogroup",
             "name": `${prefix}_accessibilite_pour_le_reapprovisionnement`,

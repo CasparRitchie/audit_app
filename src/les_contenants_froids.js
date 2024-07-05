@@ -1,13 +1,4 @@
-import red from './images/red.png'
-import amber from './images/amber.png'
-import green from './images/green.png'
-
-const rateValues = [
-  { "value": 1, "text": "Red", "imageLink": red },
-  { "value": 2, "text": "Orange", "imageLink": amber },
-  { "value": 3, "text": "Green", "imageLink": green }
-];
-const image_size = 50
+import { createImagePickerElement } from './createImagePickerElement';
 
 function createLesContenantsFroids(prefix) {
   return {
@@ -19,204 +10,24 @@ function createLesContenantsFroids(prefix) {
         "name": `${prefix}_les_contenants_froids_panel`,
         "title": "Les Contenants (prestations froides)",
         "templateElements": [
-          {
-            "type": "imagepicker",
-            "name": `${prefix}_etat_des_saladiers_de_service`,
-            "title": "Etat des saladiers de service",
-            "imageWidth": image_size,
-            "imageHeight": image_size,
-            "choices": rateValues.map(rate => ({
-              "value": rate.value,
-              "imageLink": rate.imageLink
-            }))
-          },
-          {
-            "type": "imagepicker",
-            "name": `${prefix}_uniformite_de_la_vaisselle_utilisee`,
-            "title": "Uniformité de la vaisselle utilisée",
-            "imageWidth": image_size,
-            "imageHeight": image_size,
-            "choices": rateValues.map(rate => ({
-              "value": rate.value,
-              "imageLink": rate.imageLink
-            }))
-          },
-          {
-            "type": "imagepicker",
-            "name": `${prefix}_disponibilite_des_ramequins_raviers`,
-            "title": "Disponibilité des ramequins/raviers",
-            "imageWidth": image_size,
-            "imageHeight": image_size,
-            "choices": rateValues.map(rate => ({
-              "value": rate.value,
-              "imageLink": rate.imageLink
-            }))
-          },
-          {
-            "type": "imagepicker",
-            "name": `${prefix}_etat_des_ramequins_raviers`,
-            "title": "Etat des ramequins/raviers",
-            "imageWidth": image_size,
-            "imageHeight": image_size,
-            "choices": rateValues.map(rate => ({
-              "value": rate.value,
-              "imageLink": rate.imageLink
-            }))
-          },
-          {
-            "type": "imagepicker",
-            "name": `${prefix}_proprete_des_ramequins_raviers`,
-            "title": "Propreté des ramequins/raviers",
-            "imageWidth": image_size,
-            "imageHeight": image_size,
-            "choices": rateValues.map(rate => ({
-              "value": rate.value,
-              "imageLink": rate.imageLink
-            }))
-          },
-          {
-            "type": "imagepicker",
-            "name": `${prefix}_disponibilite_des_petites_assiettes`,
-            "title": "Disponibilité des petites assiettes",
-            "imageWidth": image_size,
-            "imageHeight": image_size,
-            "choices": rateValues.map(rate => ({
-              "value": rate.value,
-              "imageLink": rate.imageLink
-            }))
-          },
-          {
-            "type": "imagepicker",
-            "name": `${prefix}_etat_des_petites_assiettes`,
-            "title": "Etat des petites assiettes",
-            "imageWidth": image_size,
-            "imageHeight": image_size,
-            "choices": rateValues.map(rate => ({
-              "value": rate.value,
-              "imageLink": rate.imageLink
-            }))
-          },
-          {
-            "type": "imagepicker",
-            "name": `${prefix}_proprete_des_petites_assiettes`,
-            "title": "Propreté des petites assiettes",
-            "imageWidth": image_size,
-            "imageHeight": image_size,
-            "choices": rateValues.map(rate => ({
-              "value": rate.value,
-              "imageLink": rate.imageLink
-            }))
-          },
-          {
-            "type": "imagepicker",
-            "name": `${prefix}_disponibilite_des_coupelles`,
-            "title": "Disponibilité des coupelles",
-            "imageWidth": image_size,
-            "imageHeight": image_size,
-            "choices": rateValues.map(rate => ({
-              "value": rate.value,
-              "imageLink": rate.imageLink
-            }))
-          },
-          {
-            "type": "imagepicker",
-            "name": `${prefix}_etat_des_coupelles`,
-            "title": "Etat des coupelles",
-            "imageWidth": image_size,
-            "imageHeight": image_size,
-            "choices": rateValues.map(rate => ({
-              "value": rate.value,
-              "imageLink": rate.imageLink
-            }))
-          },
-          {
-            "type": "imagepicker",
-            "name": `${prefix}_proprete_des_coupelles`,
-            "title": "Propreté des coupelles",
-            "imageWidth": image_size,
-            "imageHeight": image_size,
-            "choices": rateValues.map(rate => ({
-              "value": rate.value,
-              "imageLink": rate.imageLink
-            }))
-          },
-          {
-            "type": "imagepicker",
-            "name": `${prefix}_disponibilite_des_bols`,
-            "title": "Disponibilité des bols",
-            "imageWidth": image_size,
-            "imageHeight": image_size,
-            "choices": rateValues.map(rate => ({
-              "value": rate.value,
-              "imageLink": rate.imageLink
-            }))
-          },
-          {
-            "type": "imagepicker",
-            "name": `${prefix}_etat_des_bols`,
-            "title": "Etat des bols",
-            "imageWidth": image_size,
-            "imageHeight": image_size,
-            "choices": rateValues.map(rate => ({
-              "value": rate.value,
-              "imageLink": rate.imageLink
-            }))
-          },
-          {
-            "type": "imagepicker",
-            "name": `${prefix}_proprete_des_bols`,
-            "title": "Propreté des bols",
-            "imageWidth": image_size,
-            "imageHeight": image_size,
-            "choices": rateValues.map(rate => ({
-              "value": rate.value,
-              "imageLink": rate.imageLink
-            }))
-          },
-          {
-            "type": "imagepicker",
-            "name": `${prefix}_disponibilite_des_bowls`,
-            "title": "Disponibilité des bowls",
-            "imageWidth": image_size,
-            "imageHeight": image_size,
-            "choices": rateValues.map(rate => ({
-              "value": rate.value,
-              "imageLink": rate.imageLink
-            }))
-          },
-          {
-            "type": "imagepicker",
-            "name": `${prefix}_etat_des_bowls`,
-            "title": "Etat des bowls",
-            "imageWidth": image_size,
-            "imageHeight": image_size,
-            "choices": rateValues.map(rate => ({
-              "value": rate.value,
-              "imageLink": rate.imageLink
-            }))
-          },
-          {
-            "type": "imagepicker",
-            "name": `${prefix}_proprete_des_bowls`,
-            "title": "Propreté des bowls",
-            "imageWidth": image_size,
-            "imageHeight": image_size,
-            "choices": rateValues.map(rate => ({
-              "value": rate.value,
-              "imageLink": rate.imageLink
-            }))
-          },
-          {
-            "type": "imagepicker",
-            "name": `${prefix}_accessibilite_pour_le_reapprovisionnement_bowls`,
-            "title": "Accessibilité pour le réapprovisionnement",
-            "imageWidth": image_size,
-            "imageHeight": image_size,
-            "choices": rateValues.map(rate => ({
-              "value": rate.value,
-              "imageLink": rate.imageLink
-            }))
-          }
+          createImagePickerElement(prefix, "etat_des_saladiers_de_service", "Etat des saladiers de service"),
+          createImagePickerElement(prefix, "uniformite_de_la_vaisselle_utilisee", "Uniformité de la vaisselle utilisée"),
+          createImagePickerElement(prefix, "disponibilite_des_ramequins_raviers", "Disponibilité des ramequins/raviers"),
+          createImagePickerElement(prefix, "etat_des_ramequins_raviers", "Etat des ramequins/raviers"),
+          createImagePickerElement(prefix, "proprete_des_ramequins_raviers", "Propreté des ramequins/raviers"),
+          createImagePickerElement(prefix, "disponibilite_des_petites_assiettes", "Disponibilité des petites assiettes"),
+          createImagePickerElement(prefix, "etat_des_petites_assiettes", "Etat des petites assiettes"),
+          createImagePickerElement(prefix, "proprete_des_petites_assiettes", "Propreté des petites assiettes"),
+          createImagePickerElement(prefix, "disponibilite_des_coupelles", "Disponibilité des coupelles"),
+          createImagePickerElement(prefix, "etat_des_coupelles", "Etat des coupelles"),
+          createImagePickerElement(prefix, "proprete_des_coupelles", "Propreté des coupelles"),
+          createImagePickerElement(prefix, "disponibilite_des_bols", "Disponibilité des bols"),
+          createImagePickerElement(prefix, "etat_des_bols", "Etat des bols"),
+          createImagePickerElement(prefix, "proprete_des_bols", "Propreté des bols"),
+          createImagePickerElement(prefix, "disponibilite_des_bowls", "Disponibilité des bowls"),
+          createImagePickerElement(prefix, "etat_des_bowls", "Etat des bowls"),
+          createImagePickerElement(prefix, "proprete_des_bowls", "Propreté des bowls"),
+          createImagePickerElement(prefix, "accessibilite_pour_le_reapprovisionnement_bowls", "Accessibilité pour le réapprovisionnement")
         ]
       }
     ]

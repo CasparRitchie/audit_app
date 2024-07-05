@@ -1,16 +1,7 @@
-import red from './images/red.png'
-import amber from './images/amber.png'
-import green from './images/green.png'
+import { createImagePickerElement } from './createImagePickerElement';
 
-const rateValues = [
-  { "value": 1, "text": "Red", "imageLink": red },
-  { "value": 2, "text": "Orange", "imageLink": amber },
-  { "value": 3, "text": "Green", "imageLink": green }
-];
-const image_size = 50
-
-const les_affichages_generales = {
-  "name": "les_affichages_generales",
+const les_affichages_page = {
+  "name": "les_affichages_page",
   "title": "Les affichages",
   "elements": [
     {
@@ -18,17 +9,7 @@ const les_affichages_generales = {
       "name": "affichages_des_horaires",
       "title": "Affichage des horaires d'ouverture du restaurant",
       "templateElements": [
-        {
-          "type": "imagepicker",
-          "name": "affichage_des_horaires_d_ouverture_du_restaurant",
-          "title": " ",
-          "imageWidth": image_size,
-          "imageHeight": image_size,
-          "choices": rateValues.map(rate => ({
-            "value": rate.value,
-            "imageLink": rate.imageLink
-          }))
-        },
+        createImagePickerElement("affichages_des_horaires", "affichage_des_horaires_d_ouverture_du_restaurant", "Affichage des horaires d'ouverture du restaurant")
       ],
       "panelCount": 0,
       "confirmDelete": true
@@ -38,17 +19,7 @@ const les_affichages_generales = {
       "name": "informations_sur_les_plats_menus",
       "title": "Informations sur les plats / menus",
       "templateElements": [
-        {
-          "type": "imagepicker",
-          "name": "informations_sur_les_plats_menus",
-          "title": " ",
-          "imageWidth": image_size,
-          "imageHeight": image_size,
-          "choices": rateValues.map(rate => ({
-            "value": rate.value,
-            "imageLink": rate.imageLink
-          }))
-        },
+        createImagePickerElement("informations_sur_les_plats_menus", "informations_sur_les_plats_menus", "Informations sur les plats / menus")
       ],
       "panelCount": 0,
       "confirmDelete": true
@@ -58,17 +29,7 @@ const les_affichages_generales = {
       "name": "informations_sur_les_creneaux_horaires_a_eviter",
       "title": "Informations sur les créneaux horaires à éviter",
       "templateElements": [
-        {
-          "type": "imagepicker",
-          "name": "informations_sur_les_creneaux_horaires_a_eviter",
-          "title": " ",
-          "imageWidth": image_size,
-          "imageHeight": image_size,
-          "choices": rateValues.map(rate => ({
-            "value": rate.value,
-            "imageLink": rate.imageLink
-          }))
-        },
+        createImagePickerElement("informations_sur_les_creneaux_horaires_a_eviter", "informations_sur_les_creneaux_horaires_a_eviter", "Informations sur les créneaux horaires à éviter")
       ],
       "panelCount": 0,
       "confirmDelete": true
@@ -76,4 +37,4 @@ const les_affichages_generales = {
   ]
 };
 
-export default les_affichages_generales;
+export default les_affichages_page;

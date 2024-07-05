@@ -1,15 +1,15 @@
-import red from './images/red.png'
-import amber from './images/amber.png'
-import green from './images/green.png'
-
-const rateValues = [
-  { "value": 1, "text": "Red", "imageLink": red },
-  { "value": 2, "text": "Orange", "imageLink": amber },
-  { "value": 3, "text": "Green", "imageLink": green }
-];
-const image_size = 50
+import { createImagePickerElement } from './createImagePickerElement';
 
 function createStandLesLocaux(prefix) {
+  const questions = [
+    { name: "etat_des_murs", title: "Etat des murs" },
+    { name: "proprete_des_murs", title: "Propreté des murs" },
+    { name: "etat_des_sols", title: "Etat des sols" },
+    { name: "proprete_des_sols", title: "Propreté des sols" },
+    { name: "etat_des_plafonds", title: "Etat des plafonds" },
+    { name: "proprete_des_plafonds", title: "Propreté des plafonds" }
+  ];
+
   return {
     "name": `${prefix}_stand_les_locaux`,
     "title": "Les Locaux de la zone",
@@ -18,74 +18,9 @@ function createStandLesLocaux(prefix) {
         "type": "paneldynamic",
         "name": `${prefix}_stand_les_locaux_panel`,
         "title": "Les Locaux",
-        "templateElements": [
-          {
-            "type": "imagepicker",
-            "name": `${prefix}_etat_des_murs`,
-            "title": "Etat des murs",
-            "imageWidth": image_size,
-            "imageHeight": image_size,
-            "choices": rateValues.map(rate => ({
-              "value": rate.value,
-              "imageLink": rate.imageLink
-            }))
-          },
-          {
-            "type": "imagepicker",
-            "name": `${prefix}_proprete_des_murs`,
-            "title": "Propreté des murs",
-            "imageWidth": image_size,
-            "imageHeight": image_size,
-            "choices": rateValues.map(rate => ({
-              "value": rate.value,
-              "imageLink": rate.imageLink
-            }))
-          },
-          {
-            "type": "imagepicker",
-            "name": `${prefix}_etat_des_sols`,
-            "title": "Etat des sols",
-            "imageWidth": image_size,
-            "imageHeight": image_size,
-            "choices": rateValues.map(rate => ({
-              "value": rate.value,
-              "imageLink": rate.imageLink
-            }))
-          },
-          {
-            "type": "imagepicker",
-            "name": `${prefix}_proprete_des_sols`,
-            "title": "Propreté des sols",
-            "imageWidth": image_size,
-            "imageHeight": image_size,
-            "choices": rateValues.map(rate => ({
-              "value": rate.value,
-              "imageLink": rate.imageLink
-            }))
-          },
-          {
-            "type": "imagepicker",
-            "name": `${prefix}_etat_des_plafonds`,
-            "title": "Etat des plafonds",
-            "imageWidth": image_size,
-            "imageHeight": image_size,
-            "choices": rateValues.map(rate => ({
-              "value": rate.value,
-              "imageLink": rate.imageLink
-            }))
-          },
-          {
-            "type": "imagepicker",
-            "name": `${prefix}_proprete_des_plafonds`,
-            "title": "Propreté des plafonds",
-            "imageWidth": image_size,
-            "imageHeight": image_size,
-            "choices": rateValues.map(rate => ({
-              "value": rate.value,
-              "imageLink": rate.imageLink
-            }))
-          }
-        ]
+        "templateElements": questions.map(question =>
+          createImagePickerElement(prefix, question.name, question.title)
+        )
       }
     ]
   };

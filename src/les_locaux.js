@@ -1,13 +1,4 @@
-import red from './images/red.png'
-import amber from './images/amber.png'
-import green from './images/green.png'
-
-const rateValues = [
-  { "value": 1, "text": "Red", "imageLink": red },
-  { "value": 2, "text": "Orange", "imageLink": amber },
-  { "value": 3, "text": "Green", "imageLink": green }
-];
-const image_size = 50
+import { createImagePickerElement } from './createImagePickerElement';
 
 function createLesLocaux(prefix) {
   return {
@@ -19,94 +10,14 @@ function createLesLocaux(prefix) {
         "name": `${prefix}_les_locaux_panel`,
         "title": "Les Locaux",
         "elements": [
-          {
-            "type": "imagepicker",
-            "name": `${prefix}_etat_des_vitres`,
-            "title": "Etat des vitres",
-                      "imageWidth": image_size,
-          "imageHeight": image_size,
-          "choices": rateValues.map(rate => ({
-            "value": rate.value,
-            "imageLink": rate.imageLink
-          }))
-          },
-          {
-            "type": "imagepicker",
-            "name": `${prefix}_proprete_des_vitres`,
-            "title": "Propreté des vitres",
-                      "imageWidth": image_size,
-          "imageHeight": image_size,
-          "choices": rateValues.map(rate => ({
-            "value": rate.value,
-            "imageLink": rate.imageLink
-          }))
-          },
-          {
-            "type": "imagepicker",
-            "name": `${prefix}_etat_des_murs`,
-            "title": "Etat des murs",
-                      "imageWidth": image_size,
-          "imageHeight": image_size,
-          "choices": rateValues.map(rate => ({
-            "value": rate.value,
-            "imageLink": rate.imageLink
-          }))
-          },
-          {
-            "type": "imagepicker",
-            "name": `${prefix}_proprete_des_murs`,
-            "title": "Propreté des murs",
-                      "imageWidth": image_size,
-          "imageHeight": image_size,
-          "choices": rateValues.map(rate => ({
-            "value": rate.value,
-            "imageLink": rate.imageLink
-          }))
-          },
-          {
-            "type": "imagepicker",
-            "name": `${prefix}_etat_des_sols`,
-            "title": "Etat des sols",
-                      "imageWidth": image_size,
-          "imageHeight": image_size,
-          "choices": rateValues.map(rate => ({
-            "value": rate.value,
-            "imageLink": rate.imageLink
-          }))
-          },
-          {
-            "type": "imagepicker",
-            "name": `${prefix}_proprete_des_sols`,
-            "title": "Propreté des sols",
-                      "imageWidth": image_size,
-          "imageHeight": image_size,
-          "choices": rateValues.map(rate => ({
-            "value": rate.value,
-            "imageLink": rate.imageLink
-          }))
-          },
-          {
-            "type": "imagepicker",
-            "name": `${prefix}_etat_des_plafonds`,
-            "title": "Etat des plafonds",
-                      "imageWidth": image_size,
-          "imageHeight": image_size,
-          "choices": rateValues.map(rate => ({
-            "value": rate.value,
-            "imageLink": rate.imageLink
-          }))
-          },
-          {
-            "type": "imagepicker",
-            "name": `${prefix}_proprete_des_plafonds`,
-            "title": "Propreté des plafonds",
-                      "imageWidth": image_size,
-          "imageHeight": image_size,
-          "choices": rateValues.map(rate => ({
-            "value": rate.value,
-            "imageLink": rate.imageLink
-          }))
-          }
+          createImagePickerElement(prefix, "etat_des_vitres", "Etat des vitres"),
+          createImagePickerElement(prefix, "proprete_des_vitres", "Propreté des vitres"),
+          createImagePickerElement(prefix, "etat_des_murs", "Etat des murs"),
+          createImagePickerElement(prefix, "proprete_des_murs", "Propreté des murs"),
+          createImagePickerElement(prefix, "etat_des_sols", "Etat des sols"),
+          createImagePickerElement(prefix, "proprete_des_sols", "Propreté des sols"),
+          createImagePickerElement(prefix, "etat_des_plafonds", "Etat des plafonds"),
+          createImagePickerElement(prefix, "proprete_des_plafonds", "Propreté des plafonds")
         ]
       }
     ]

@@ -9,7 +9,6 @@ const zone_d_acces_au_self = {
       "name": "les_locaux_zone_d_access_panel",
       "templateElements": createLesLocaux('les_locaux_zone_d_access').elements
     },
-    // Add other questions or blocks related to Zone d'accès au self here
   ]
 };
 

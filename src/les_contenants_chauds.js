@@ -1,36 +1,16 @@
-import red from './images/red.png'
-import amber from './images/amber.png'
-import green from './images/green.png'
-
-const rateValues = [
-  { "value": 1, "text": "Red", "imageLink": red },
-  { "value": 2, "text": "Orange", "imageLink": amber },
-  { "value": 3, "text": "Green", "imageLink": green }
-];
-const image_size = 50
+import { createImagePickerElement } from './createImagePickerElement';
 
 function createLesContenantsChauds(prefix) {
   return {
     "name": `${prefix}_les_contenants_chauds`,
     "title": "Les contenants (prestations chaudes)",
     "elements": [
-
-      [{
+      {
         "type": "panel",
         "name": `${prefix}_accord_assiette_produits_servis`,
         "title": "Accord assiette / produits servis",
         "elements": [
-          {
-            "type": "imagepicker",
-            "name": `${prefix}_accord_assiette_produits_servis`,
-            "title": "Accord assiette / produits servis",
-            "imageWidth": image_size,
-            "imageHeight": image_size,
-            "choices": rateValues.map(rate => ({
-              "value": rate.value,
-              "imageLink": rate.imageLink
-            }))
-          }
+          createImagePickerElement(prefix, "accord_assiette_produits_servis", "Accord assiette / produits servis")
         ]
       },
       {
@@ -38,28 +18,8 @@ function createLesContenantsChauds(prefix) {
         "name": `${prefix}_etat_des_assiettes`,
         "title": "Etat des assiettes",
         "elements": [
-          {
-            "type": "imagepicker",
-            "name": `${prefix}_etat_des_assiettes`,
-            "title": "Etat des assiettes",
-            "imageWidth": image_size,
-            "imageHeight": image_size,
-            "choices": rateValues.map(rate => ({
-              "value": rate.value,
-              "imageLink": rate.imageLink
-            }))
-          },
-          {
-            "type": "imagepicker",
-            "name": `${prefix}_proprete_des_assiettes`,
-            "title": "Propreté des assiettes",
-            "imageWidth": image_size,
-            "imageHeight": image_size,
-            "choices": rateValues.map(rate => ({
-              "value": rate.value,
-              "imageLink": rate.imageLink
-            }))
-          }
+          createImagePickerElement(prefix, "etat_des_assiettes", "Etat des assiettes"),
+          createImagePickerElement(prefix, "proprete_des_assiettes", "Propreté des assiettes")
         ]
       },
       {
@@ -67,61 +27,21 @@ function createLesContenantsChauds(prefix) {
         "name": `${prefix}_chauffe_assiettes`,
         "title": "Chauffe-assiettes",
         "elements": [
-          {
-            "type": "imagepicker",
-            "name": `${prefix}_presence_de_chauffe_assiettes`,
-            "title": "Présence de chauffe-assiettes",
-            "imageWidth": image_size,
-            "imageHeight": image_size,
-            "choices": rateValues.map(rate => ({
-              "value": rate.value,
-              "imageLink": rate.imageLink
-            }))
-          },
-          {
-            "type": "imagepicker",
-            "name": `${prefix}_etat_des_chauffe_assiettes`,
-            "title": "Etat des chauffe-assiettes",
-            "imageWidth": image_size,
-            "imageHeight": image_size,
-            "choices": rateValues.map(rate => ({
-              "value": rate.value,
-              "imageLink": rate.imageLink
-            }))
-          },
-          {
-            "type": "imagepicker",
-            "name": `${prefix}_proprete_des_chauffe_assiettes`,
-            "title": "Propreté des chauffe-assiettes",
-            "imageWidth": image_size,
-            "imageHeight": image_size,
-            "choices": rateValues.map(rate => ({
-              "value": rate.value,
-              "imageLink": rate.imageLink
-            }))
-          },
-          {
-            "type": "imagepicker",
-            "name": `${prefix}_bonne_utilisation_des_chauffe_assiettes`,
-            "title": "Bonne utilisation des chauffe-assiettes",
-            "imageWidth": image_size,
-            "imageHeight": image_size,
-            "choices": rateValues.map(rate => ({
-              "value": rate.value,
-              "imageLink": rate.imageLink
-            }))
-          },
+          createImagePickerElement(prefix, "presence_de_chauffe_assiettes", "Présence de chauffe-assiettes"),
+          createImagePickerElement(prefix, "etat_des_chauffe_assiettes", "Etat des chauffe-assiettes"),
+          createImagePickerElement(prefix, "proprete_des_chauffe_assiettes", "Propreté des chauffe-assiettes"),
+          createImagePickerElement(prefix, "bonne_utilisation_des_chauffe_assiettes", "Bonne utilisation des chauffe-assiettes"),
           {
             "type": "radiogroup",
             "name": `${prefix}_accessibilite_pour_le_reapprovisionnement`,
             "title": "Accessibilité pour le réapprovisionnement",
             "choices": [
-              {"value": "facile", "text": "Facile"},
-              {"value": "difficile", "text": "Difficile"}
+              { "value": "facile", "text": "Facile" },
+              { "value": "difficile", "text": "Difficile" }
             ]
           }
         ]
-      }]
+      }
     ]
   };
 }
