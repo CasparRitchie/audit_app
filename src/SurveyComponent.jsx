@@ -47,7 +47,7 @@ class SurveyComponent extends Component {
     this.survey = new Model(this.surveyJson);
     this.survey.onComplete.add((sender) => {
       console.log("Survey Results:", sender.data);
-      axios.post('https://github.com/CasparRitchie/auditapp-backend/submit-survey', sender.data)
+      axios.post(' https://auditapp-backend-3bfe82912913.herokuapp.com/submit-survey', sender.data)
         .then(response => {
           console.log(response.data);
         })
