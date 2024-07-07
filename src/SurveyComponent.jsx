@@ -45,9 +45,41 @@ class SurveyComponent extends Component {
     };
 
     this.survey = new Model(this.surveyJson);
-    this.survey.onComplete.add((sender) => {
+    this.survey.onComplete.add(async (sender) => {
       console.log("Survey Results:", sender.data);
-      axios.post(' https://auditapp-backend-3bfe82912913.herokuapp.com/submit-survey', sender.data)
+
+      // Function to handle file conversion to base64
+      const convertFileToBase64 = (file) => {
+        return new Promise((resolve, reject) => {
+          const reader = new FileReader();
+          reader.readAsDataURL(file);
+          reader.onload = () => resolve(reader.result.split(',')[1]);
+          reader.onerror = error => reject(error);
+        });
+      };
+
+      // Extract files from the survey data
+      const files = [];
+      for (const key in sender.data) {
+        if (sender.data.hasOwnProperty(key)) {
+          const value = sender.data[key];
+          if (value && value.constructor === FileList) {
+            for (let i = 0; i < value.length; i++) {
+              const file = value[i];
+              const base64Content = await convertFileToBase64(file);
+              files.push({ filename: file.name, content: base64Content });
+            }
+          }
+        }
+      }
+
+      // Create the payload with survey data and files
+      const payload = {
+        ...sender.data,
+        files
+      };
+
+      axios.post('https://auditapp-backend-3bfe82912913.herokuapp.com/submit-survey', payload)
         .then(response => {
           console.log(response.data);
         })
