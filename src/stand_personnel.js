@@ -1,4 +1,4 @@
-import { createImagePickerElement } from './createImagePickerElement';
+import { createCompleteQuestionElement } from './createImagePickerElement';
 
 function createStandPersonnel(prefix) {
   const questions = [
@@ -23,7 +23,7 @@ function createStandPersonnel(prefix) {
         "name": `${prefix}_stand_personnel_panel`,
         "title": "Personnel",
         "templateElements": questions.map(question =>
-          createImagePickerElement(prefix, question.name, question.title)
+          createCompleteQuestionElement(prefix, question.name, question.title)
         )
       }
     ]

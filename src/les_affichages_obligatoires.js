@@ -1,4 +1,4 @@
-import { createImagePickerElement } from './createImagePickerElement';
+import { createCompleteQuestionElement } from './createImagePickerElement';
 
 function createLesAffichagesObligatoires(prefix) {
   return {
@@ -42,11 +42,11 @@ function createLesAffichagesObligatoires(prefix) {
         "name": `${prefix}_affichage`,
         "title": "Affichage",
         "templateElements": [
-          createImagePickerElement(prefix, "presence_d_un_affichage", "Présence d'un affichage"),
-          createImagePickerElement(prefix, "qualite_de_l_affichage", "Qualité de l'affichage"),
-          createImagePickerElement(prefix, "lisibilite_des_informations", "Lisibilité des informations"),
-          createImagePickerElement(prefix, "precision_des_informations", "Précision des informations"),
-          createImagePickerElement(prefix, "indication_du_prix", "Indication du prix")
+          createCompleteQuestionElement(prefix, "presence_d_un_affichage", "Présence d'un affichage"),
+          createCompleteQuestionElement(prefix, "qualite_de_l_affichage", "Qualité de l'affichage"),
+          createCompleteQuestionElement(prefix, "lisibilite_des_informations", "Lisibilité des informations"),
+          createCompleteQuestionElement(prefix, "precision_des_informations", "Précision des informations"),
+          createCompleteQuestionElement(prefix, "indication_du_prix", "Indication du prix")
         ]
       },
       {
@@ -54,7 +54,7 @@ function createLesAffichagesObligatoires(prefix) {
         "name": `${prefix}_presentation`,
         "title": "Présentation",
         "elements": [
-          createImagePickerElement(prefix, "qualite_de_la_presentation", "Qualité de la présentation"),
+          createCompleteQuestionElement(prefix, "qualite_de_la_presentation", "Qualité de la présentation"),
           {
             "type": "radiogroup",
             "name": `${prefix}_accessibilite_pour_le_reapprovisionnement`,
@@ -71,11 +71,11 @@ function createLesAffichagesObligatoires(prefix) {
         "name": `${prefix}_les_ustensiles_de_service`,
         "title": "Les ustensiles de service",
         "elements": [
-          createImagePickerElement(prefix, "etat_des_ustensiles", "Etat des ustensiles"),
-          createImagePickerElement(prefix, "proprete_des_ustensiles", "Propreté des ustensiles"),
-          createImagePickerElement(prefix, "etat_des_bacs_gastronormes", "Etat des bacs gastronormes"),
-          createImagePickerElement(prefix, "proprete_des_bacs_gastronormes", "Propreté des bacs gastronormes"),
-          createImagePickerElement(prefix, "adequation_des_ustensiles_de_service_a_la_prestation_servie", "Adéquation des ustensiles de service à la prestation servie")
+          createCompleteQuestionElement(prefix, "etat_des_ustensiles", "Etat des ustensiles"),
+          createCompleteQuestionElement(prefix, "proprete_des_ustensiles", "Propreté des ustensiles"),
+          createCompleteQuestionElement(prefix, "etat_des_bacs_gastronormes", "Etat des bacs gastronormes"),
+          createCompleteQuestionElement(prefix, "proprete_des_bacs_gastronormes", "Propreté des bacs gastronormes"),
+          createCompleteQuestionElement(prefix, "adequation_des_ustensiles_de_service_a_la_prestation_servie", "Adéquation des ustensiles de service à la prestation servie")
         ]
       }
     ]

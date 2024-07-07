@@ -1,4 +1,4 @@
-import { createImagePickerElement } from './createImagePickerElement';
+import { createCompleteQuestionElement } from './createImagePickerElement';
 
 const les_affichages_page = {
   "name": "les_affichages_page",
@@ -9,7 +9,7 @@ const les_affichages_page = {
       "name": "affichages_des_horaires",
       "title": "Affichage des horaires d'ouverture du restaurant",
       "templateElements": [
-        createImagePickerElement("affichages_des_horaires", "affichage_des_horaires_d_ouverture_du_restaurant", "Affichage des horaires d'ouverture du restaurant")
+        createCompleteQuestionElement("affichages_des_horaires", "affichage_des_horaires_d_ouverture_du_restaurant", "Affichage des horaires d'ouverture du restaurant")
       ],
       "panelCount": 0,
       "confirmDelete": true
@@ -19,7 +19,7 @@ const les_affichages_page = {
       "name": "informations_sur_les_plats_menus",
       "title": "Informations sur les plats / menus",
       "templateElements": [
-        createImagePickerElement("informations_sur_les_plats_menus", "informations_sur_les_plats_menus", "Informations sur les plats / menus")
+        createCompleteQuestionElement("informations_sur_les_plats_menus", "informations_sur_les_plats_menus", "Informations sur les plats / menus")
       ],
       "panelCount": 0,
       "confirmDelete": true
@@ -29,7 +29,7 @@ const les_affichages_page = {
       "name": "informations_sur_les_creneaux_horaires_a_eviter",
       "title": "Informations sur les créneaux horaires à éviter",
       "templateElements": [
-        createImagePickerElement("informations_sur_les_creneaux_horaires_a_eviter", "informations_sur_les_creneaux_horaires_a_eviter", "Informations sur les créneaux horaires à éviter")
+        createCompleteQuestionElement("informations_sur_les_creneaux_horaires_a_eviter", "informations_sur_les_creneaux_horaires_a_eviter", "Informations sur les créneaux horaires à éviter")
       ],
       "panelCount": 0,
       "confirmDelete": true

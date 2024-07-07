@@ -1,4 +1,4 @@
-import { createImagePickerElement } from './createImagePickerElement';
+import { createCompleteQuestionElement } from './createImagePickerElement';
 
 function createEnvironnementDecoration(prefix) {
   return {
@@ -10,10 +10,10 @@ function createEnvironnementDecoration(prefix) {
         "name": `${prefix}_environnement_decoration_panel`,
         "title": "Environnement / décoration",
         "templateElements": [
-          createImagePickerElement(prefix, "temperature", "Température"),
-          createImagePickerElement(prefix, "luminosite", "Luminosité"),
-          createImagePickerElement(prefix, "niveau_sonore", "Niveau sonore"),
-          createImagePickerElement(prefix, "fluidite_de_deplacement_pour_les_convives", "Fluidité de déplacement pour les convives")
+          createCompleteQuestionElement(prefix, "temperature", "Température"),
+          createCompleteQuestionElement(prefix, "luminosite", "Luminosité"),
+          createCompleteQuestionElement(prefix, "niveau_sonore", "Niveau sonore"),
+          createCompleteQuestionElement(prefix, "fluidite_de_deplacement_pour_les_convives", "Fluidité de déplacement pour les convives")
         ]
       }
     ]

@@ -17,16 +17,6 @@ const les_fruits = {
           {"value": 3, "text": "Green"}
         ]
     },
-    {
-      "type": "paneldynamic",
-      "name": "respect_des_procedures_d_hygiene",
-      "title": "Respect des procédures d’hygiène (absence d’utilisation de torchon, port de la coiffe règlementaire, port de bijoux, etc.)",
-      "templateElements": [
-        createImagePicker("respect_des_procedures_d_hygiene")
-      ],
-      "panelCount": 0,
-      "confirmDelete": true
-    },
   ]
 };
 

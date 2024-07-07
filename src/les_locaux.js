@@ -1,4 +1,5 @@
-import { createImagePickerElement } from './createImagePickerElement';
+import { createCompleteQuestionElement } from './createImagePickerElement';
+
 
 function createLesLocaux(prefix) {
   return {
@@ -10,14 +11,14 @@ function createLesLocaux(prefix) {
         "name": `${prefix}_les_locaux_panel`,
         "title": "Les Locaux",
         "elements": [
-          createImagePickerElement(prefix, "etat_des_vitres", "Etat des vitres"),
-          createImagePickerElement(prefix, "proprete_des_vitres", "Propreté des vitres"),
-          createImagePickerElement(prefix, "etat_des_murs", "Etat des murs"),
-          createImagePickerElement(prefix, "proprete_des_murs", "Propreté des murs"),
-          createImagePickerElement(prefix, "etat_des_sols", "Etat des sols"),
-          createImagePickerElement(prefix, "proprete_des_sols", "Propreté des sols"),
-          createImagePickerElement(prefix, "etat_des_plafonds", "Etat des plafonds"),
-          createImagePickerElement(prefix, "proprete_des_plafonds", "Propreté des plafonds")
+          createCompleteQuestionElement(prefix, "etat_des_vitres", "Etat des vitres"),
+          createCompleteQuestionElement(prefix, "proprete_des_vitres", "Propreté des vitres"),
+          createCompleteQuestionElement(prefix, "etat_des_murs", "Etat des murs"),
+          createCompleteQuestionElement(prefix, "proprete_des_murs", "Propreté des murs"),
+          createCompleteQuestionElement(prefix, "etat_des_sols", "Etat des sols"),
+          createCompleteQuestionElement(prefix, "proprete_des_sols", "Propreté des sols"),
+          createCompleteQuestionElement(prefix, "etat_des_plafonds", "Etat des plafonds"),
+          createCompleteQuestionElement(prefix, "proprete_des_plafonds", "Propreté des plafonds")
         ]
       }
     ]

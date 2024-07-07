@@ -1,4 +1,4 @@
-import { createImagePickerElement } from './createImagePickerElement';
+import { createCompleteQuestionElement } from './createImagePickerElement';
 
 function createStandLesLocaux(prefix) {
   const questions = [
@@ -19,7 +19,7 @@ function createStandLesLocaux(prefix) {
         "name": `${prefix}_stand_les_locaux_panel`,
         "title": "Les Locaux",
         "templateElements": questions.map(question =>
-          createImagePickerElement(prefix, question.name, question.title)
+          createCompleteQuestionElement(prefix, question.name, question.title)
         )
       }
     ]

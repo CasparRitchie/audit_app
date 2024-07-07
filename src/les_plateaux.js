@@ -1,4 +1,4 @@
-import { createImagePickerElement } from './createImagePickerElement';
+import { createCompleteQuestionElement } from './createImagePickerElement';
 
 function createLesPlateaux(prefix) {
   return {
@@ -10,9 +10,9 @@ function createLesPlateaux(prefix) {
         "name": `${prefix}_les_plateaux_panel`,
         "title": "Les Plateaux",
         "templateElements": [
-          createImagePickerElement(prefix, "disponibilite", "Disponibilité"),
-          createImagePickerElement(prefix, "etat", "Etat"),
-          createImagePickerElement(prefix, "proprete", "Propreté"),
+          createCompleteQuestionElement(prefix, "disponibilite", "Disponibilité"),
+          createCompleteQuestionElement(prefix, "etat", "Etat"),
+          createCompleteQuestionElement(prefix, "proprete", "Propreté"),
           {
             "type": "radiogroup",
             "name": `${prefix}_accessibilite_pour_le_reapprovisionnement`,

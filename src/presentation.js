@@ -1,4 +1,4 @@
-import { createImagePickerElement } from './createImagePickerElement';
+import { createCompleteQuestionElement } from './createImagePickerElement';
 
 function createPresentation(prefix) {
   return {
@@ -10,7 +10,7 @@ function createPresentation(prefix) {
         "name": `${prefix}_presentation_panel`,
         "title": "Présentation",
         "templateElements": [
-          createImagePickerElement(prefix, "qualite_de_la_presentation", "Qualité de la présentation"),
+          createCompleteQuestionElement(prefix, "qualite_de_la_presentation", "Qualité de la présentation"),
           {
             "type": "radiogroup",
             "name": `${prefix}_accessibilite_pour_le_reapprovisionnement`,

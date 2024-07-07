@@ -1,4 +1,4 @@
-import { createImagePickerElement } from './createImagePickerElement';
+import { createCompleteQuestionElement } from './createImagePickerElement';
 
 function createMaitriseDesFlux(prefix) {
   return {
@@ -10,7 +10,7 @@ function createMaitriseDesFlux(prefix) {
         "name": `${prefix}_maitrise_des_flux_panel`,
         "title": "Maîtrise des flux",
         "templateElements": [
-          createImagePickerElement(prefix, "reactivite_reduire_temps_attente", "Réactivité pour réduire les temps d'attente")
+          createCompleteQuestionElement(prefix, "reactivite_reduire_temps_attente", "Réactivité pour réduire les temps d'attente")
         ]
       }
     ]

@@ -1,4 +1,4 @@
-import { createImagePickerElement } from './createImagePickerElement';
+import { createCompleteQuestionElement } from './createImagePickerElement';
 
 function createAffichages(prefix) {
   return {
@@ -10,10 +10,10 @@ function createAffichages(prefix) {
         "name": `${prefix}_les_affichages_panel`,
         "title": "Les affichages",
         "templateElements": [
-          createImagePickerElement(prefix, "disponibilite_des_informations_sur_les_allergenes", "Disponibilité des informations sur les allergènes"),
-          createImagePickerElement(prefix, "visibilite_des_informations", "Visibilité des informations"),
-          createImagePickerElement(prefix, "information_produit", "Information produit"),
-          createImagePickerElement(prefix, "prix_des_produits", "Prix des produits")
+          createCompleteQuestionElement(prefix, "disponibilite_des_informations_sur_les_allergenes", "Disponibilité des informations sur les allergènes"),
+          createCompleteQuestionElement(prefix, "visibilite_des_informations", "Visibilité des informations"),
+          createCompleteQuestionElement(prefix, "information_produit", "Information produit"),
+          createCompleteQuestionElement(prefix, "prix_des_produits", "Prix des produits")
         ]
       }
     ]

@@ -1,4 +1,4 @@
-import { createImagePickerElement } from './createImagePickerElement';
+import { createCompleteQuestionElement } from './createImagePickerElement';
 
 function createLesContenantsChauds(prefix) {
   return {
@@ -10,7 +10,7 @@ function createLesContenantsChauds(prefix) {
         "name": `${prefix}_accord_assiette_produits_servis`,
         "title": "Accord assiette / produits servis",
         "elements": [
-          createImagePickerElement(prefix, "accord_assiette_produits_servis", "Accord assiette / produits servis")
+          createCompleteQuestionElement(prefix, "accord_assiette_produits_servis", "Accord assiette / produits servis")
         ]
       },
       {
@@ -18,8 +18,8 @@ function createLesContenantsChauds(prefix) {
         "name": `${prefix}_etat_des_assiettes`,
         "title": "Etat des assiettes",
         "elements": [
-          createImagePickerElement(prefix, "etat_des_assiettes", "Etat des assiettes"),
-          createImagePickerElement(prefix, "proprete_des_assiettes", "Propreté des assiettes")
+          createCompleteQuestionElement(prefix, "etat_des_assiettes", "Etat des assiettes"),
+          createCompleteQuestionElement(prefix, "proprete_des_assiettes", "Propreté des assiettes")
         ]
       },
       {
@@ -27,10 +27,10 @@ function createLesContenantsChauds(prefix) {
         "name": `${prefix}_chauffe_assiettes`,
         "title": "Chauffe-assiettes",
         "elements": [
-          createImagePickerElement(prefix, "presence_de_chauffe_assiettes", "Présence de chauffe-assiettes"),
-          createImagePickerElement(prefix, "etat_des_chauffe_assiettes", "Etat des chauffe-assiettes"),
-          createImagePickerElement(prefix, "proprete_des_chauffe_assiettes", "Propreté des chauffe-assiettes"),
-          createImagePickerElement(prefix, "bonne_utilisation_des_chauffe_assiettes", "Bonne utilisation des chauffe-assiettes"),
+          createCompleteQuestionElement(prefix, "presence_de_chauffe_assiettes", "Présence de chauffe-assiettes"),
+          createCompleteQuestionElement(prefix, "etat_des_chauffe_assiettes", "Etat des chauffe-assiettes"),
+          createCompleteQuestionElement(prefix, "proprete_des_chauffe_assiettes", "Propreté des chauffe-assiettes"),
+          createCompleteQuestionElement(prefix, "bonne_utilisation_des_chauffe_assiettes", "Bonne utilisation des chauffe-assiettes"),
           {
             "type": "radiogroup",
             "name": `${prefix}_accessibilite_pour_le_reapprovisionnement`,

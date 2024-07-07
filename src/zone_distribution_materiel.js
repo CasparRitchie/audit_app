@@ -1,4 +1,4 @@
-import { createImagePickerElement } from './createImagePickerElement';
+import { createCompleteQuestionElement } from './createImagePickerElement';
 
 function createZoneDistributionMateriel(prefix) {
   const questions = [
@@ -23,7 +23,7 @@ function createZoneDistributionMateriel(prefix) {
         "name": `${prefix}_le_materiel_panel`,
         "title": "Le matériel",
         "elements": questions.map(question =>
-          createImagePickerElement(prefix, question.name, question.title)
+          createCompleteQuestionElement(prefix, question.name, question.title)
         )
       }
     ]

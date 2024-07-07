@@ -1,4 +1,4 @@
-import { createImagePickerElement } from './createImagePickerElement';
+import { createCompleteQuestionElement } from './createImagePickerElement';
 
 function createRespectDesHorairesDeService(prefix) {
   return {
@@ -10,7 +10,7 @@ function createRespectDesHorairesDeService(prefix) {
         "name": `${prefix}_respect_des_horaires_de_service_panel`,
         "title": "Respect des horaires de service",
         "templateElements": [
-          createImagePickerElement(prefix, "respect_horaires_service", "Respect des horaires de service")
+          createCompleteQuestionElement(prefix, "respect_horaires_service", "Respect des horaires de service")
         ]
       }
     ]
